@@ -1,0 +1,4 @@
+#!/bin/sh
+
+CHOICE=$(ls ~/.pastebin | dmenu -c -l 15 )
+[ -n "$CHOICE" ] && xclip -selection c $HOME/.pastebin/$CHOICE
