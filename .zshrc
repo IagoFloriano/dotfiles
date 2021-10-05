@@ -16,7 +16,7 @@ autoload -U colors && colors
 
 # setting prompt
 #
-# github link to plugin https://github.com/olivierverdier/zsh-git-prompt
+# github link to plugin https://github.com/zsh-git-prompt/zsh-git-prompt
 source ~/.zsh/zsh-git-prompt/zshrc.sh
 #    bold   green user@hostname  white   :  magenta   directory
 PROMPT="%B%{$fg[green]%}%n@%M%{$reset_color%}:%{$fg[magenta]%}%~ $(git_super_status)
