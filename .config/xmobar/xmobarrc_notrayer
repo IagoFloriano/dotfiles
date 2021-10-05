@@ -1,0 +1,33 @@
+Config { font = "xft:Hack:weight=bold:pixelsize=12:antalias=true:hinting=true"
+       , additionalFonts = [ "xft:Awesome 5 Free Solid:antalias=true:hinting=true"
+                           , "xft:Awesome 5 Brands:pixelsize=12:antalias=true:hinting=true"
+                           , "xft:Hack:weight=bold:pixelsize=24:antalias=true:hinting=true"
+       ]
+       , bgColor = "#282a36"
+       , fgColor = "#f8f8f2"
+       , alpha = 255
+       , position = Top
+       , lowerOnStart = True
+       , hideOnStart = False
+       , allDesktops = True
+       , persistent = True
+       , iconRoot = "."
+       , commands = [ 
+                      Run Date "%H:%M:%S %a %_d/%m/%y" "date" 10 --Clock
+                    , Run StdinReader --Things from xmonad
+                    , Run Com "/home/yv/.config/xmobar/trayer-padding-icon.sh" [] "trayerpad" 10 --Trayer spacing
+                    , Run BatteryP ["BAT1"]                                --Battery
+                                   ["-t", "<acstatus><left>%</fc>",        --How to be displayed
+                                    "--", "-O", "<fc=#33ee33>^",           --Charging
+                                    "-i", "<fc=#f8f8f2>",                  --Idle
+                                    "-o", "<fc=#ee3333>v"                  --Discharging
+                                    ]
+                                    50
+                    , Run Kbd [("us(intl)", "INTL"), ("us", "US"), ("br","BR")]
+                    , Run Cpu ["-t", "Cpu:<total>%"] 10
+                    , Run Memory ["-t", "Ram:<used>/<total>"] 10
+                   ]
+       , sepChar = "%"
+       , alignSep = "}{"
+       , template = " %StdinReader%}{ %cpu%<fn=3>|</fn>%memory%<fn=3>|</fn>%kbd%<fn=3>|</fn>%date% "
+       }
