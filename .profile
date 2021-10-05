@@ -1,0 +1,5 @@
+#
+# ~/.profile
+#
+
+source ~/.zshenv
