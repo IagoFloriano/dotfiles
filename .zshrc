@@ -14,9 +14,10 @@ compinit
 # End of lines added by compinstall
 autoload -U colors && colors
 
-# setting PS1
+# setting prompt
+source ~/.zsh/zsh-git-prompt/zshrc.sh
 #    bold   green user@hostname  white   :  magenta   directory
-PS1="%B%{$fg[green]%}%n@%M%{$reset_color%}:%{$fg[magenta]%}%~
+PROMPT="%B%{$fg[green]%}%n@%M%{$reset_color%}:%{$fg[magenta]%}%~ $(git_super_status)
 %{$fg[green]%}->%{$reset_color%}%b "
 #     green   ->  reset color
 
