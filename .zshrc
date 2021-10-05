@@ -18,8 +18,6 @@ autoload -U colors && colors
 #
 # github link to plugin https://github.com/zsh-git-prompt/zsh-git-prompt
 source ~/.zsh/zsh-git-prompt/zshrc.sh
-GIT_PROMPT_EXECUTABLE="haskell"
-ZSH_THEME_GIT_PROMPT_CACHE=1
 ZSH_GIT_PROMPT_SHOW_UPSTREAM=1
 #    bold   green user@hostname  white   :  magenta   directory
 PROMPT='%B%{$fg[green]%}%n@%M%{$reset_color%}:%{$fg[magenta]%}%~ $(git_super_status)
