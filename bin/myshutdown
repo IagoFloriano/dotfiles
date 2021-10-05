@@ -1,0 +1,9 @@
+#!/bin/sh
+
+CHOICE=$(printf "Yes\nReboot\nNo" | dmenu -c -l 3 -p "Turn off the computer")
+echo $CHOICE
+
+rm $HOME/Pictures/shots/* 
+
+[ "$CHOICE" = "Yes" ] && shutdown now
+[ "$CHOICE" = "Reboot" ] && reboot
