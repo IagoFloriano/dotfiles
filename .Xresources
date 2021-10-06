@@ -1,0 +1,45 @@
+! general settings
+?.saveline:        1500
+?.termName:        xterm-256color
+?.urgentOnBell:    false
+?.visualBell:      false
+?.iso14755:        false
+?.iso14755_52:     false
+?.meta8:           false
+?.metaSendsEscape: true
+?.iconfile:        /usr/share/icons/breeze-dark/apps/64/utilities-terminal.svg
+
+! appearance
+?.depth:             32
+?.transparent:       true
+?.shading:           10
+?.scrollBar:         false
+?.scrollTtyOutput:   false
+?.scrollWithBuffer:  true
+?.scrollTtyKeypress: true
+
+! Dracula color scheme
+?.foreground: #F8F8F2
+?.background: #282A36
+?.color0:     #000000
+?.color8:     #44475A
+?.color1:     #FF5555
+?.color9:     #FFB86C
+?.color2:     #50FA7B
+?.color10:    #50FA7B
+?.color3:     #E6DB74
+?.color11:    #F1FA8C
+?.color4:     #6272A4
+?.color12:    #6272A4
+?.color5:     #BD93F9
+?.color13:    #FF79C6
+?.color6:     #8BE9FD
+?.color14:    #66D9EF
+?.color7:     #666666
+?.color15:    #FFFFFF
+
+! fonts
+URxvt.letterSpace:    -2
+URxvt.font:           xft:DejaVu Sans Mono:size=12, \
+                      xft:Ubuntu Mono:size=12, \
+                      xft:Noto Color Emoji:size=12
