@@ -87,3 +87,6 @@ EDITOR="/usr/bin/nvim"
 
 # run on startup
 $HOME/bin/ufetch
+
+# zsh-syntax-highlighting https://github.com/zsh-users/zsh-syntax-highlighting
+source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
