@@ -234,7 +234,7 @@ myKeys = [
           , (("M-v"), spawn "~/bin/permpastebin") -- Lauch pastebin
           , (("M-<F4>"), spawn "pavucontrol") -- Sound configs
           , (("M-g"), spawn "gimp") -- Launch Gimp
-          , (("M-o"), spawn "godot") -- Launch Gimp
+          , (("M-o"), spawn "godot") -- Launch Godot
           , (("M-s r"), spawn "rhythmbox") -- Lauch RhythmBox
           , (("M-S-c"), spawn "gcolor2") -- Sound configs
           , (("M-i"), spawn "insync show") -- Insync
