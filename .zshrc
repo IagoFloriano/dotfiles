@@ -18,7 +18,14 @@ autoload -U colors && colors
 #
 # github link to plugin https://github.com/zsh-git-prompt/zsh-git-prompt
 source ~/.zsh/zsh-git-prompt/zshrc.sh
+# variables for git prompt
 ZSH_GIT_PROMPT_SHOW_UPSTREAM=1
+ZSH_THEME_GIT_PROMPT_STAGED="%{$fg[red]%}%{● %G%}"
+ZSH_THEME_GIT_PROMPT_CONFLICTS="%{$fg[red]%}%{✖ %G%}"
+ZSH_THEME_GIT_PROMPT_CHANGED="%{$fg[blue]%}%{✚ %G%}"
+ZSH_THEME_GIT_PROMPT_STASHED="%{$fg_bold[blue]%}%{⚑ %G%}"
+ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[cyan]%}%{… %G%}"
+ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[green]%}%{✔ %G%}"
 #    bold   green user@hostname  white   :  magenta   directory
 PROMPT='%B%{$fg[green]%}%n@%M%{$reset_color%}:%{$fg[magenta]%}%~ $(git_super_status)
 %{$fg[green]%}->%{$reset_color%}%b '
