@@ -218,9 +218,11 @@ myKeys = [
           , (("M-S-f"), spawn "feh --no-fehbg --bg-fill -z /home/yv/Pictures/Wallpapers") -- Set random wallpaper
           , (("M-<Escape>"), spawn "slock") -- Lockscreen
           , (("M-S-<Escape>"), spawn "~/bin/myshutdown") -- Turn computer off
-          , (("<Print>"), spawn "scrot -fs -e 'mv $f ~/Pictures/shots/ && xclip -t image/png -selection c ~/Pictures/shots/$f'")
-          , (("M-<Print>"), spawn "scrot -u -e 'mv $f ~/Pictures/shots/ && xclip -t image/png -selection c ~/Pictures/shots/$f'")
-          , (("S-<Print>"), spawn "scrot -m -e 'mv $f ~/Pictures/shots/ && xclip -t image/png -selection c ~/Pictures/shots/$f'")
+          , (("<Print>"), spawn "scrot -fs -e 'mv $f ~/Pictures/shots/ && xclip -t image/png -selection c ~/Pictures/shots/$f'") -- Interactive screenshot
+          , (("M-<Print>"), spawn "scrot -u -e 'mv $f ~/Pictures/shots/ && xclip -t image/png -selection c ~/Pictures/shots/$f'") -- Active window screenshot
+          , (("S-<Print>"), spawn "scrot -a 1440,0,1920,1080 -m -e 'mv $f ~/Pictures/shots/ && xclip -t image/png -selection c ~/Pictures/shots/$f'") -- First monitor screenshot
+          , (("C-<Print>"), spawn "scrot -a 0,480,1440,900 -m -e 'mv $f ~/Pictures/shots/ && xclip -t image/png -selection c ~/Pictures/shots/$f'") -- Second monitor screenshot
+          , (("C-S-<Print>"), spawn "scrot -m -e 'mv $f ~/Pictures/shots/ && xclip -t image/png -selection c ~/Pictures/shots/$f'") -- Both monitor screenshot
           , (("M-<Scroll_lock>"), spawn "xinput --set-prop 13 'libinput Scroll Method Enabled' 0, 0, 1")
           , (("M-S-<Scroll_lock>"), spawn "xinput --set-prop 13 'libinput Scroll Method Enabled' 0, 0, 0")
 
