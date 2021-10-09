@@ -371,15 +371,17 @@ myScratchPads = [ NS "terminal" spawnTerm findTerm manageTerm
 -------------------
 -- Search prompt --
 -------------------
-archwiki, reddit, nyaa :: S.SearchEngine
+archwiki, aur, reddit, nyaa :: S.SearchEngine
 
 archwiki = S.searchEngine "archwiki" "https://wiki.archlinux.org/index.php?search="
+aur = S.searchEngine "aur" "https://aur.archlinux.org/packages/?O=0&K="
 reddit   = S.searchEngine "reddit" "https://www.reddit.com/search/?q="
 nyaa   = S.searchEngine "nyaa" "https://nyaa.si/?f=0&c=0_0&q="
 
 searchList :: [(String, S.SearchEngine)]
 searchList = [ ("d", S.duckduckgo)
              , ("a", archwiki)
+             , ("s", aur)
              , ("g", S.google)
              , ("y", S.youtube)
              , ("r", reddit)
