@@ -370,7 +370,7 @@ myScratchPads = [ NS "terminal" spawnTerm findTerm manageTerm
   findTorrent   = className =? "qBittorrent"
   manageTorrent = myScratchpadFloat
 
-  spawnJome  = "jome"
+  spawnJome  = "jome | xclip -selection c"
   findJome   = className =? "jome"
   manageJome = customFloating $ W.RationalRect l t w h
                where
