@@ -248,6 +248,7 @@ myKeys = [
           , (("M-s s"), namedScratchpadAction myScratchPads "spotify")
           , (("M-s d"), namedScratchpadAction myScratchPads "calendar")
           , (("M-s q"), namedScratchpadAction myScratchPads "torrent")
+          , (("M-s j"), namedScratchpadAction myScratchPads "jome") --emoji input app
 
           -- XMonad --
           , (("M-S-q"), io (exitWith ExitSuccess)) -- Logout
@@ -345,6 +346,7 @@ myScratchPads = [ NS "terminal" spawnTerm findTerm manageTerm
                 , NS "spotify" spawnSpot findSpot manageSpot
                 , NS "calendar" spawnCalendar findCalendar manageCalendar
                 , NS "torrent" spawnTorrent findTorrent manageTorrent
+                , NS "jome" spawnJome findJome manageJome
                 ]
   
   where
@@ -367,6 +369,15 @@ myScratchPads = [ NS "terminal" spawnTerm findTerm manageTerm
   spawnTorrent  = "qbittorrent"
   findTorrent   = className =? "qBittorrent"
   manageTorrent = myScratchpadFloat
+
+  spawnJome  = "jome"
+  findJome   = className =? "jome"
+  manageJome = customFloating $ W.RationalRect l t w h
+               where
+               h = 0.6
+               w = 0.6
+               t = 0.2
+               l = 0.2
 
 -------------------
 -- Search prompt --
