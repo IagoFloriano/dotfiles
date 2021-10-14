@@ -81,7 +81,6 @@ myStartupHook = do
       spawnOnce "qbittorrent"
       spawnOnce "pcmanfm -d"
       spawnOnce "insync start"
-      spawnOnce "play-with-mpv"
 
 -------------
 -- Layouts --
