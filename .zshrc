@@ -8,9 +8,6 @@ bindkey -v
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/iago/.zshrc'
-
-autoload -Uz compinit
-compinit
 # End of lines added by compinstall
 autoload -U colors && colors
 
@@ -57,8 +54,11 @@ echo -ne '\e[1 q' # default block cursor
 preexec() { echo -ne '\e[1 q' ;} # use block cursor on each new prompt
 
 # auto/tab complete:
-autoload -U compinit
+autoload -U compinit && compinit -u
 zstyle ':completion:*' menu select
+# Auto complete with case insenstivity
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+
 zmodload zsh/complist
 compinit
 _comp_options+=(globdots) # include hidden files
