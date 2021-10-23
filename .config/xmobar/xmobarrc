@@ -1,3 +1,11 @@
+-- colors --
+-- cyan = "#8be9fd" --
+-- green =  "#50fa7b" --
+-- orange =  "#ffb86c" --
+-- pink =  "#ff79c6" --
+-- purple =  "#bd93f9" --
+-- red =  "#ff5555" --
+-- yellow = "#f1fa8c" --
 Config { font = "xft:Hack:weight=bold:pixelsize=12:antalias=true:hinting=true"
        , additionalFonts = [ "xft:Awesome 5 Free Solid:antalias=true:hinting=true"
                            , "xft:Awesome 5 Brands:pixelsize=12:antalias=true:hinting=true"
@@ -32,5 +40,5 @@ Config { font = "xft:Hack:weight=bold:pixelsize=12:antalias=true:hinting=true"
                    ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = " %StdinReader%}{ %cpu%<fn=3>|</fn>%memory%<fn=3>|</fn>%disku%<fn=3>|</fn>%kbd%<fn=3>|</fn>%date%<fn=3>|</fn>%trayerpad%"
+       , template = " %StdinReader%}{ <fc=#50fa7b>%cpu%</fc><fn=3>|</fn><fc=#ffb86c>%memory%</fc><fn=3>|</fn><fc=#bd93f9>%disku%</fc><fn=3>|</fn><fc=#8be9fd>%kbd%</fc><fn=3>|</fn><fc=#f1fa8c>%date%</fc><fn=3>|</fn>%trayerpad%"
        }
