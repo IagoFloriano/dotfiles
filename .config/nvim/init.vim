@@ -65,7 +65,7 @@ inoremap <C-S-tab> <Esc>:bp<CR>
 nnoremap <Leader>n :vs<Space>
 nnoremap <Leader><S-n> :vs<CR>
 nnoremap <Leader>e :e<Space> 
-nnoremap <Leader>f :E .<CR>
+nnoremap <Leader>f :Vex <CR>
 
 " Remap from vet to hor and from hor to vet
 map <Leader>th <C-w>t<C-w>h
@@ -80,6 +80,9 @@ nnoremap <silent> <Leader><S-q> :qa<CR>
 
 " Removes pipes | that act as separators on splits
 " set fillchars+=vert:|
+
+" Terminal commands
+nnoremap <Leader>T :vs <CR>:terminal <CR>
 
 " Faster exit from insert mode
 inoremap ii <Esc><Esc>

@@ -61,7 +61,7 @@ inoremap <C-S-tab> <Esc>:bp<CR>
 nnoremap <Leader>n :vs<Space>
 nnoremap <Leader><S-n> :vs<CR>
 nnoremap <Leader>e :e<Space> 
-nnoremap <Leader>f :E .<CR>
+nnoremap <Leader>f :Vex <CR>
 
 " Remap from vet to hor and from hor to vet
 map <Leader>th <C-w>t<C-w>h
