@@ -19,6 +19,7 @@ set splitbelow splitright
 set colorcolumn=0
 set cursorline
 set nohlsearch
+let g:netrw_banner = 0
 
 augroup CursorLine
 au!
@@ -61,7 +62,8 @@ inoremap <C-S-tab> <Esc>:bp<CR>
 nnoremap <Leader>n :vs<Space>
 nnoremap <Leader><S-n> :vs<CR>
 nnoremap <Leader>e :e<Space> 
-nnoremap <Leader>f :Vex <CR>
+nnoremap <Leader>f :E <CR>
+nnoremap <Leader>F :Vex <CR>
 
 " Remap from vet to hor and from hor to vet
 map <Leader>th <C-w>t<C-w>h
@@ -86,6 +88,9 @@ nnoremap <Leader>y "+y
 vnoremap <Leader>y "+y
 nnoremap <Leader>p "+p
 vnoremap <Leader>p "+p
+
+" Save and generate latex
+nnoremap <silent> <Leader>W :w<CR>:!pdflatex %<CR><CR>
 
 " Some toggles
 nnoremap <Leader>/ :set nohlsearch!<CR>
