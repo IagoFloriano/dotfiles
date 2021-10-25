@@ -19,6 +19,7 @@ set splitbelow splitright
 set colorcolumn=0
 set cursorline
 set nohlsearch
+set autochdir
 let g:netrw_banner = 0
 
 augroup CursorLine
@@ -97,6 +98,7 @@ nnoremap <Leader>p "+p
 vnoremap <Leader>p "+p
 
 " Save and generate latex
+" using script that is on $HOME/bin
 nnoremap <silent> <Leader>W :w<CR>:!pdflatex %<CR><CR>
 
 " Some toggles
