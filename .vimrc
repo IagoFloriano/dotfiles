@@ -29,8 +29,11 @@ augroup END
 
 " Remap leader key
 let mapleader=" "
-" Remap new terminal
-map <Leader>tt :terminal<CR>
+
+" Terminal commands
+nnoremap <Leader>T :vs <CR>:terminal <CR>
+nnoremap <Leader>tT :sp <CR>:terminal <CR>
+nnoremap <Leader>tt :terminal<CR>
 
 
 packadd! dracula
@@ -95,3 +98,4 @@ nnoremap <silent> <Leader>W :w<CR>:!pdflatex %<CR><CR>
 " Some toggles
 nnoremap <Leader>/ :set nohlsearch!<CR>
 nnoremap <Leader>\ :set wrap!<CR>
+nnoremap <Leader>] :set expandtab!<CR>

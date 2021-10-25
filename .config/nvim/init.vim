@@ -30,8 +30,11 @@ augroup END
 
 " Remap leader key
 let mapleader=" "
-" Remap new terminal
-map <Leader>tt :terminal<CR>
+
+" Terminal commands
+nnoremap <Leader>T :vs <CR>:terminal <CR>
+nnoremap <Leader>tT :sp <CR>:terminal <CR>
+nnoremap <Leader>tt :terminal<CR>
 
 " Mouse settings
 set mouse=nicr
@@ -68,11 +71,11 @@ nnoremap <Leader>n :vs<Space>
 nnoremap <Leader><S-n> :vs<CR>
 nnoremap <Leader>e :e<Space> 
 nnoremap <Leader>f :E <CR>
-nnoremap <Leader>F :Vex <CR>
+nnoremap <Leader>F :Vex <CR>:vertical resize 20<CR>
 
 " Remap from vet to hor and from hor to vet
-map <Leader>th <C-w>t<C-w>h
-map <Leader>tk <C-w>t<C-w>k
+map <Leader>th <C-w>t<C-w>H
+map <Leader>tk <C-w>t<C-w>K
 
 nnoremap <silent> <Leader>r <C-w>r
 nnoremap <silent> <Leader>X :wqa<CR>
@@ -83,9 +86,6 @@ nnoremap <silent> <Leader><S-q> :qa<CR>
 
 " Removes pipes | that act as separators on splits
 " set fillchars+=vert:|
-
-" Terminal commands
-nnoremap <Leader>T :vs <CR>:terminal <CR>
 
 " Faster exit from insert mode
 inoremap ii <Esc><Esc>
@@ -104,3 +104,4 @@ nnoremap <silent> <Leader>W :w<CR>:!pdflatex %<CR><CR>
 " Some toggles
 nnoremap <Leader>/ :set nohlsearch!<CR>
 nnoremap <Leader>\ :set wrap!<CR>
+nnoremap <Leader>] :set expandtab!<CR>
