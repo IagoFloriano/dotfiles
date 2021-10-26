@@ -3,7 +3,7 @@
 #
 
 export EDITOR="/usr/bin/nvim"
-export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/.npm-global/bin:$HOME/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export QT_QPA_PLATFORMTHEME="qt5ct"
 export TERM=alacritty
