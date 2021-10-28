@@ -35,6 +35,7 @@ import XMonad.Layout.Magnifier
 import XMonad.Layout.Grid
 import XMonad.Layout.ShowWName
 import XMonad.Layout.Hidden
+import XMonad.Layout.SimpleFloat
 
 -----------------------
 -- Setting variables --
@@ -80,7 +81,7 @@ myStartupHook = do
       spawnOnce "picom -D 2"
       spawnOnce "qbittorrent"
       spawnOnce "pcmanfm -d"
-      spawnOnce "insync start"
+      -- spawnOnce "insync start"
 
 -------------
 -- Layouts --
@@ -116,11 +117,14 @@ fulL = renamed [Replace "[F]"]
        $ hiddenWindows
        $ noBorders
        $ Full
+floatLayout = renamed [Replace "[f]"]
+              $ hiddenWindows
+              $ simpleFloat
 magnGrid = renamed [Replace "[G]"]
            $ hiddenWindows
            $ mySpacing 2
            $ GridRatio (3/2)
-myLayout = avoidStruts (tiled ||| mTiled ||| full ||| magnGrid) ||| fulL
+myLayout = avoidStruts (tiled ||| mTiled ||| full ||| magnGrid ||| floatLayout) ||| fulL
 --  where
 --     -- default tiling algorithm partitions the screen into two panes
 --     tiled   = Tall nmaster delta ratio
@@ -208,6 +212,7 @@ myKeys = [
           , (("M-<Space> r"), sendMessage $ JumpToLayout "[|]") -- Mirror master and stack layout
           , (("M-<Space> f"), sendMessage $ JumpToLayout "[ ]") -- Full layout
           , (("M-<Space> S-f"), sendMessage $ JumpToLayout "[F]") -- Full layout without struts
+          , (("M-<Space> C-f"), sendMessage $ JumpToLayout "[f]") -- Full layout without struts
           , (("M-<Space> g"), sendMessage $ JumpToLayout "[G]") -- Grid layout
 
           -- System --
