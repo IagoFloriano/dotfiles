@@ -212,7 +212,7 @@ myKeys = [
           , (("M-<Space> r"), sendMessage $ JumpToLayout "[|]") -- Mirror master and stack layout
           , (("M-<Space> f"), sendMessage $ JumpToLayout "[ ]") -- Full layout
           , (("M-<Space> S-f"), sendMessage $ JumpToLayout "[F]") -- Full layout without struts
-          , (("M-<Space> C-f"), sendMessage $ JumpToLayout "[f]") -- Full layout without struts
+          , (("M-<Space> C-f"), sendMessage $ JumpToLayout "[f]") -- Float layout
           , (("M-<Space> g"), sendMessage $ JumpToLayout "[G]") -- Grid layout
 
           -- System --
