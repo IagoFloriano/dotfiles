@@ -63,6 +63,7 @@ nnoremap <silent> <Leader>= <C-w>=
 nnoremap <Leader><tab> :bn<CR>
 nnoremap <Leader><S-tab> :bp<CR>
 nnoremap <Leader>x :bd<CR>:vs<CR>
+nnoremap <Leader>d :bd<CR>
 inoremap <C-tab> <Esc>:bn<CR>
 inoremap <C-S-tab> <Esc>:bp<CR>
 
@@ -88,8 +89,8 @@ nnoremap <silent> <Leader><S-q> :qa<CR>
 " set fillchars+=vert:|
 
 " Faster exit from insert mode
-inoremap ii <Esc><Esc>
-vnoremap ii <Esc><Esc>
+inoremap <C-i> <Esc><Esc>
+vnoremap <C-i> <Esc><Esc>
 
 " Copy and paste from clibpoard
 nnoremap <Leader>y "+y
