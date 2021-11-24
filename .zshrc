@@ -88,6 +88,12 @@ alias mousescroll="xinput --set-prop 13 'libinput Scroll Method Enabled' 0, 0, "
 alias connectcel="adb connect 192.168.15.13:5555"
 
 alias dots='git --git-dir=$HOME/dotfiles --work-tree=$HOME'
+alias gadd='git add'
+alias gommit='git commit -m'
+alias gpush='git push'
+alias gpull='git pull'
+
+alias rm='rm -I'
 
 # non global variables
 EDITOR="/usr/bin/nvim"
