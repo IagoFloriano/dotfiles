@@ -94,6 +94,7 @@ alias gpush='git push'
 alias gpull='git pull'
 
 alias rm='rm -I'
+alias pipupdate="pip freeze --user | cut -d'=' -f1 | xargs -n1 pip install -U"
 
 # non global variables
 EDITOR="/usr/bin/nvim"
