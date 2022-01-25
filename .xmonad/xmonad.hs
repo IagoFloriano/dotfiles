@@ -82,6 +82,7 @@ myStartupHook = do
       spawnOnce "picom -D 2"
       spawnOnce "qbittorrent"
       spawnOnce "pcmanfm -d"
+      spawnOnce "noisetorch -i"
       -- spawnOnce "insync start"
 
 -------------
