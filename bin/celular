@@ -1,3 +1,5 @@
 #!/bin/bash
 
-scrcpy -m 1024 $1 & sndcpy
+sndcpy & scrcpy -m 1024 $1 
+
+adb kill-server
