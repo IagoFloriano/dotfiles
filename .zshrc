@@ -71,10 +71,10 @@ bindkey -v '^?' backward-delete-char
 
 # ls aliases
 alias ls='ls --color=auto --group-directories-first'
-alias l='ls --color=auto -l --group-directories-first'
-alias ll='ls --color=auto -l --group-directories-first'
+alias l='ls --color=auto -lh --group-directories-first'
+alias ll='ls --color=auto -lh --group-directories-first'
 alias la='ls --color=auto -A --group-directories-first'
-alias lla='ls --color=auto -lA --group-directories-first'
+alias lla='ls --color=auto -lhA --group-directories-first'
 
 # other aliases
 # alias bright="xrandr --output LVDS1 --brightness"
