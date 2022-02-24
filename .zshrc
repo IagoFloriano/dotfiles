@@ -78,7 +78,7 @@ alias lla='ls --color=auto -lhA --group-directories-first'
 
 # other aliases
 # alias bright="xrandr --output LVDS1 --brightness"
-alias sxiv="devour sxiv"
+alias sxiv="devour nsxiv"
 alias zathura="devour zathura"
 alias vim="nvim"
 alias svim="sudo -e"
@@ -100,7 +100,8 @@ alias pipupdate="pip freeze --user | cut -d'=' -f1 | xargs -n1 pip install -U"
 EDITOR="/usr/bin/nvim"
 
 # run on startup
-$HOME/bin/ufetch
+# $HOME/bin/ufetch
+colorscript exec arch
 
 # zsh-syntax-highlighting https://github.com/zsh-users/zsh-syntax-highlighting
 source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

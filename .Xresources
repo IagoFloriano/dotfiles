@@ -18,6 +18,10 @@
 ?.scrollWithBuffer:  true
 ?.scrollTtyKeypress: true
 
+! for nsxiv
+window.foreground: #F8F8F2
+window.background: #282A36
+
 ! Dracula color scheme
 ?.foreground: #F8F8F2
 ?.background: #282A36

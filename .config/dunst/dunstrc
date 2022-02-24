@@ -396,10 +396,11 @@
 #    summary = "*script*"
 #    script = dunst_test.sh
 
-#[ignore]
-#    # This notification will not be displayed
-#    summary = "foobar"
-#    skip_display = true
+[ignore]
+    # This notification will not be displayed
+    appname = "qBittorrent"
+    summary = "I/O Error"
+    skip_display = true
 
 #[history-ignore]
 #    # This notification will not be saved in history
