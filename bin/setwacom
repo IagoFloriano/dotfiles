@@ -1,0 +1,3 @@
+#!/bin/bash
+xsetwacom set "Wacom One by Wacom S Pen stylus" MapToOutput 1920x1080+1440+0
+xsetwacom set "Wacom One by Wacom S Pen stylus" Area 0 0 15200 8550

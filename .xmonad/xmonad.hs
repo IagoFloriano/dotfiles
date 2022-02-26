@@ -160,9 +160,9 @@ myLayout = avoidStruts (tiled ||| mTiled ||| full ||| magnGrid ||| floatLayout) 
 myManageHook = composeAll
     [
       resource =? "Godot_Engine"   --> doCenterFloat
-    , className =? "Gimp-2.99"            --> doCenterFloat
+    , className =? "Gimp"          --> doCenterFloat
     , className =? "leagueclientux.exe"            --> doCenterFloat
-    , className =? "Gimp-2.99"            --> doShift ( myWorkspaces !! 1 )
+    , className =? "Gimp"          --> doShift ( myWorkspaces !! 1 )
     --, className =? "Brave-browser"   --> doShift ( myWorkspaces !! 2 )
     , className =? "discord"         --> doShift ( myWorkspaces !! 3 )
     , className =? "whatsdesk"       --> doShift ( myWorkspaces !! 3 )
@@ -242,7 +242,7 @@ myKeys = [
           , (("M-f"), spawn "~/bin/files") -- Lauch file explorer
           , (("M-v"), spawn "~/bin/permpastebin") -- Lauch pastebin
           , (("M-<F4>"), spawn "pavucontrol") -- Sound configs
-          , (("M-g"), spawn "gimp-2.99") -- Launch Gimp
+          , (("M-g"), spawn "gimp") -- Launch Gimp
           , (("M-u"), spawn "godot") -- Launch Godot
           , (("M-s r"), spawn "rhythmbox") -- Lauch RhythmBox
           , (("M-S-c"), spawn "gcolor2") -- Sound configs

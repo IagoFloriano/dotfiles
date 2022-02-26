@@ -78,7 +78,7 @@ alias lla='ls --color=auto -lhA --group-directories-first'
 
 # other aliases
 # alias bright="xrandr --output LVDS1 --brightness"
-alias sxiv="devour nsxiv"
+alias sxiv="devour nsxiv -rabf"
 alias zathura="devour zathura"
 alias vim="nvim"
 alias svim="sudo -e"
