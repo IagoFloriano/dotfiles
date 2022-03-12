@@ -84,6 +84,8 @@ myStartupHook = do
       spawnOnce "qbittorrent"
       spawnOnce "pcmanfm -d"
       spawnOnce "noisetorch -i"
+      spawnOnce "setwacom"
+      spawnOnce "steam -silent"
       -- spawnOnce "insync start"
 
 -------------
