@@ -70,7 +70,7 @@ myStartupHook = do
       spawnOnce "dunst"
       spawnOnce "lxqt-policykit-agent"
       spawnOnce "~/.fehbg"
-      spawnOnce "pamac-tray"
+      -- spawnOnce "pamac-tray"
       spawnOnce "volumeicon &"
       spawnOnce "nm-applet &"
       spawnOnce "~/bin/mytrayer.sh"

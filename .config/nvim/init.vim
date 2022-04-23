@@ -89,8 +89,9 @@ nnoremap <silent> <Leader><S-q> :qa<CR>
 " set fillchars+=vert:|
 
 " Faster exit from insert mode
-inoremap <C-i> <Esc><Esc>
-vnoremap <C-i> <Esc><Esc>
+inoremap <C-l> <Esc><Esc>
+vnoremap <C-l> <Esc><Esc>
+tnoremap <C-l> <C-\><C-n>
 
 " Copy and paste from clibpoard
 nnoremap <Leader>y "+y
