@@ -14,6 +14,7 @@ import XMonad.Prompt
 import XMonad.Actions.CycleWS
 import XMonad.Actions.NoBorders
 import XMonad.Actions.Search as S
+import XMonad.Actions.CopyWindow
 
 import XMonad.Util.SpawnOnce
 import XMonad.Util.Run
@@ -36,6 +37,7 @@ import XMonad.Layout.Grid
 import XMonad.Layout.ShowWName
 import XMonad.Layout.Hidden
 import XMonad.Layout.SimpleFloat
+import XMonad.Layout.Accordion
 
 -----------------------
 -- Setting variables --
@@ -125,11 +127,12 @@ fulL = renamed [Replace "[F]"]
 floatLayout = renamed [Replace "[f]"]
               $ hiddenWindows
               $ simpleFloat
-magnGrid = renamed [Replace "[G]"]
+centered = renamed [Replace "[C]"]
            $ hiddenWindows
            $ mySpacing 2
-           $ GridRatio (3/2)
-myLayout = avoidStruts (tiled ||| mTiled ||| full ||| magnGrid ||| floatLayout) ||| fulL
+           $ Mirror
+           $ Accordion
+myLayout = avoidStruts (tiled ||| mTiled ||| full ||| centered ||| floatLayout) ||| fulL
 --  where
 --     -- default tiling algorithm partitions the screen into two panes
 --     tiled   = Tall nmaster delta ratio
@@ -161,10 +164,10 @@ myLayout = avoidStruts (tiled ||| mTiled ||| full ||| magnGrid ||| floatLayout) 
 --
 myManageHook = composeAll
     [
-      resource =? "Godot_Engine"   --> doCenterFloat
-    , className =? "Gimp"          --> doCenterFloat
-    , className =? "leagueclientux.exe"            --> doCenterFloat
-    , className =? "Gimp"          --> doShift ( myWorkspaces !! 1 )
+      resource =? "Godot_Engine"    --> doCenterFloat
+    , className =? "Gimp"           --> doCenterFloat
+    , className =? "Gimp"           --> doShift ( myWorkspaces !! 1 )
+    , className =? "krita"          --> doShift ( myWorkspaces !! 1 )
     --, className =? "Brave-browser"   --> doShift ( myWorkspaces !! 2 )
     , className =? "discord"         --> doShift ( myWorkspaces !! 3 )
     , className =? "whatsdesk"       --> doShift ( myWorkspaces !! 3 )
@@ -172,6 +175,7 @@ myManageHook = composeAll
     , className =? "TelegramDesktop" --> doShift ( myWorkspaces !! 3 )
     , className =? "Rhythmbox"       --> doShift ( myWorkspaces !! 4 )
     , className =? "Steam"           --> doShift ( myWorkspaces !! 6 )
+    , className =? "Gamehub"         --> doShift ( myWorkspaces !! 6 )
     , className =? "Steam"           --> doCenterFloat
     , resource  =? "desktop_window"  --> doIgnore
     , resource  =? "kdesktop"        --> doIgnore
@@ -218,7 +222,7 @@ myKeys = [
           , (("M-<Space> f"), sendMessage $ JumpToLayout "[ ]") -- Full layout
           , (("M-<Space> S-f"), sendMessage $ JumpToLayout "[F]") -- Full layout without struts
           , (("M-<Space> C-f"), sendMessage $ JumpToLayout "[f]") -- Float layout
-          , (("M-<Space> g"), sendMessage $ JumpToLayout "[G]") -- Grid layout
+          , (("M-<Space> c"), sendMessage $ JumpToLayout "[C]") -- CenteredMaster layout
 
           -- System --
           , (("M-<Tab>"), spawn "$HOME/bin/layout_switch.sh") -- Change keyboard layout
@@ -234,6 +238,9 @@ myKeys = [
           , (("C-S-<Print>"), spawn "scrot -m -e 'mv $f ~/Pictures/shots/ && xclip -t image/png -selection c ~/Pictures/shots/$f'") -- Both monitor screenshot
           , (("M-<Scroll_lock>"), spawn "xinput --set-prop 13 'libinput Scroll Method Enabled' 0, 0, 1")
           , (("M-S-<Scroll_lock>"), spawn "xinput --set-prop 13 'libinput Scroll Method Enabled' 0, 0, 0")
+          , (("M-0"), windows copyToAll) -- window stick to all workspaces
+          , (("M-S-0"), killAllOtherCopies) -- window not stick anymore
+          , (("M-S-c"), kill1) -- window not stick to this workspace
 
           -- Launch applications --
           , (("M-S-h"), spawn (myTerminal ++ " -e htop")) -- Htop
@@ -247,8 +254,10 @@ myKeys = [
           , (("M-g"), spawn "gimp") -- Launch Gimp
           , (("M-u"), spawn "godot") -- Launch Godot
           , (("M-s r"), spawn "rhythmbox") -- Lauch RhythmBox
-          , (("M-S-c"), spawn "gcolor2") -- Sound configs
+          , (("M-S-p"), spawn "gcolor2") -- Color picker
           , (("M-i"), spawn "insync show") -- Insync
+          , (("M-S-g"), spawn "gamehub") -- Gamehub
+          , (("M-S-u"), spawn "krita") -- Krita
 
           -- Scratchpads
           , (("M-s <Return>"), namedScratchpadAction myScratchPads "terminal")
