@@ -646,7 +646,15 @@ font:
 #
 # If the same trigger is assigned to multiple actions, all of them are executed
 # in the order they were defined in.
-#key_bindings:
+key_bindings:
+  - { key: D, mods: Control, action: ScrollPageDown}
+  - { key: U, mods: Control, action: ScrollPageUp}
+  - { key: J, mods: Control|Shift, action: ScrollHalfPageDown}
+  - { key: K, mods: Control|Shift, action: ScrollHalfPageUp}
+  - { key: J, mods: Control, action: ScrollLineDown}
+  - { key: K, mods: Control, action: ScrollLineUp}
+  - { key: K, mods: Control|Alt, action: ScrollToTop}
+  - { key: J, mods: Control|Alt, action: ScrollToBottom}
   #- { key: Paste,                                action: Paste          }
   #- { key: Copy,                                 action: Copy           }
   #- { key: L,         mods: Control,             action: ClearLogNotice }
