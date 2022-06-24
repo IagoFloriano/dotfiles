@@ -40,6 +40,19 @@ nnoremap <Leader>tt :terminal<CR>
 set mouse=nicr
 set mouse=a
 
+" Plugins
+call plug#begin('~/local/share/nvim/plugged')
+
+Plug 'bfrg/vim-cpp-modern'
+Plug 'uiiaoo/java-syntax.vim'
+
+call plug#end()
+
+" Cpp moden configs
+let g:cpp_attributes_highlight = 1
+let g:cpp_member_highlight = 1
+
+" Theming
 packadd! dracula
 colorscheme dracula
 " set background=dark
