@@ -48,9 +48,12 @@ Plug 'uiiaoo/java-syntax.vim'
 
 call plug#end()
 
-" Cpp moden configs
+" Cpp modern configs
 let g:cpp_attributes_highlight = 1
 let g:cpp_member_highlight = 1
+
+" Getter setter generator
+map <Leader>g mawv/ <CR>"ty/ <CR>wvwh"ny/getters<CR>$a<CR><CR><Esc>xxapublic<Esc>"tpa<Esc>"npbiget<Esc>l~ea()<CR>{<CR><Tab>return<Esc>"npa;<CR>}<Esc>=<CR><Esc>/setters<CR>$a<CR><CR><Esc>xxapublic void<Esc>"npbiset<Esc>l~ea(<Esc>"tpa <Esc>"npa)<CR>{<CR><Tab>this.<Esc>"npa=<Esc>"npa;<CR>}<Esc>=<CR>`ak
 
 " Theming
 packadd! dracula
@@ -58,6 +61,9 @@ colorscheme dracula
 " set background=dark
 :highlight Normal ctermfg=None ctermbg=None
 let g:neovide_transparency=0.95
+
+" Movement
+nnoremap <Leader>0 ^
 
 " Remap splits navigation to just SPACE + hjkl
 nnoremap <Leader>h <C-w>h
