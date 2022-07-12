@@ -310,7 +310,7 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
 -- return (All True) if the default handler is to be run afterwards. To
 -- combine event hooks use mappend or mconcat from Data.Monoid.
 --
-myEventHook = fullscreenEventHook
+myEventHook = ewmhFullscreen
 
 ----------
 -- Main --
@@ -319,7 +319,7 @@ myEventHook = fullscreenEventHook
 main = do
   xmproc0 <- spawnPipe "xmobar -x 0 $HOME/.config/xmobar/xmobarrc"
   xmproc1 <- spawnPipe "xmobar -x 1 $HOME/.config/xmobar/xmobarrc_notrayer"
-  xmonad $ docks $ ewmh def
+  xmonad $ docks $ ewmhFullscreen def
       { terminal           = myTerminal,
         startupHook        = myStartupHook,
         focusFollowsMouse  = myFocusFollowsMouse,
@@ -333,8 +333,8 @@ main = do
         -- layoutHook         = smartBorders . showWName' myShowWNameTheme $ myLayout, --Uncomment to show workspace name when switching workspaces
         layoutHook         = smartBorders $ myLayout,
         manageHook         = myManageHook <+> manageDocks,
-        handleEventHook    = myEventHook,
-        logHook = dynamicLogWithPP $ namedScratchpadFilterOutWorkspacePP $ xmobarPP {
+        --handleEventHook    = myEventHook,
+        logHook = dynamicLogWithPP $ filterOutWsPP [scratchpadWorkspaceTag]$ xmobarPP {
                       ppOutput = \x -> hPutStrLn xmproc0 x
                                     >> hPutStrLn xmproc1 x
                     , ppCurrent = xmobarColor myVisibleWS "" . wrap "[" "]"         -- Current workspace
