@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Hack:pixelsize=14:antialias=true:autohint=true";
+static char *font = "Hack:pixelsize=16:antialias=true:autohint=true";
 static int borderpx = 2;
 
 /*
@@ -237,6 +237,12 @@ static Shortcut shortcuts[] = {
   { TERMMOD,              XK_Escape,      keyboard_select,{.i =  0} },
 	{ ShiftMask,            XK_Page_Up,     kscrollup,      {.i = -1} },
 	{ ShiftMask,            XK_Page_Down,   kscrolldown,    {.i = -1} },
+	{ ControlMask,          XK_k,           kscrollup,      {.i =  1} },
+	{ ControlMask,          XK_j,           kscrolldown,    {.i =  1} },
+	{ TERMMOD,              XK_K,           kscrollup,      {.i = -2} },
+	{ TERMMOD,              XK_J,           kscrolldown,    {.i = -2} },
+	{ (ControlMask|MODKEY), XK_k,           kscrollup,      {.i = -3} },
+	{ (ControlMask|MODKEY), XK_j,           kscrolldown,    {.i = -3} },
 };
 
 /*
