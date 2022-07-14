@@ -9,6 +9,8 @@ export QT_QPA_PLATFORMTHEME="qt5ct"
 export TERM=alacritty
 export TERMINAL=alacritty
 export BROWSER="brave"
+export AWT_TOOLKIT=MToolkit
+export _JAVA_AWT_WM_NONREPARENTING=1
 
 export GTK_IM_MODULE='fcitx'
 export QT_IM_MODULE='fcitx'
