@@ -48,6 +48,7 @@ Plug 'uiiaoo/java-syntax.vim'
 Plug 'vim-python/python-syntax'
 Plug 'calviken/vim-gdscript3'
 Plug 'Yggdroot/indentLine'
+Plug 'vimsence/vimsence'
 
 call plug#end()
 
@@ -109,7 +110,7 @@ map <Leader>tk <C-w>t<C-w>K
 nnoremap <silent> <Leader>r <C-w>r
 nnoremap <silent> <Leader>X :wqa<CR>
 nnoremap <Leader>w :wa<CR>
-nnoremap <silent> <Leader>i gg=G2<C-o>zz
+nnoremap <silent> <Leader>i migg=G2'i
 nnoremap <silent> <Leader>q :q<CR>
 nnoremap <silent> <Leader><S-q> :qa<CR>
 
