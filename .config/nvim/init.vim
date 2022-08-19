@@ -63,6 +63,7 @@ let g:python_highlight_all = 1
 
 " Indent
 let g:indentLine_char_list = ['▏','|', '¦', '┆', '┊']
+nnoremap <Leader>H :HindentToggle
 
 " Getter setter generator
 map <Leader>g mawv/ <CR>"ty/ <CR>wvwh"ny/getters<CR>$a<CR><CR><Esc>xxapublic<Esc>"tpa<Esc>"npbiget<Esc>l~ea()<CR>{<CR><Tab>return<Esc>"npa;<CR>}<Esc>=<CR><Esc>/setters<CR>$a<CR><CR><Esc>xxapublic void<Esc>"npbiset<Esc>l~ea(<Esc>"tpa <Esc>"npa)<CR>{<CR><Tab>this.<Esc>"npa=<Esc>"npa;<CR>}<Esc>=<CR>`ak

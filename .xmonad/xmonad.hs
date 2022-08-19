@@ -69,6 +69,7 @@ myUrgent = "#C45500"
 ------------------
 
 myStartupHook = do
+      spawnOnce "/home/yv/.screenlayout/default.sh"
       spawnOnce "dunst"
       spawnOnce "lxqt-policykit-agent"
       spawnOnce "~/.fehbg"
