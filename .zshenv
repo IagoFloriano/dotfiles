@@ -5,6 +5,7 @@
 export EDITOR="/usr/bin/nvim"
 export PATH="$HOME/.npm-global/bin:$HOME/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
+export GHCUP_USE_XDG_DIRS="$HOME/.config/ghcup"
 export QT_QPA_PLATFORMTHEME="qt5ct"
 export TERM=alacritty
 export TERMINAL=alacritty
