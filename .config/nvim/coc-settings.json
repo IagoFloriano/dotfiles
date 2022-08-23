@@ -1,0 +1,14 @@
+{
+  "suggest.autoTrigger": "none",
+  "suggest.selection": "first",
+  "conceallevel": "0",
+  "languageserver": {
+    "haskell": {
+      "command": "haskell-language-server-wrapper",
+      "args": ["--lsp"],
+      "rootPatterns": ["*.cabal", "stack.yaml", "cabal.project", "package.yaml", "hie.yaml"],
+      "filetypes": ["haskell", "lhaskell"]
+    }
+  },
+  "java.home": "/usr/lib/jvm/java-18-openjdk"
+}
