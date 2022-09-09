@@ -69,7 +69,6 @@ myUrgent = "#C45500"
 ------------------
 
 myStartupHook = do
-      spawnOnce "/home/yv/.screenlayout/default.sh"
       spawnOnce "dunst"
       spawnOnce "lxqt-policykit-agent"
       spawnOnce "~/.fehbg"
@@ -229,7 +228,7 @@ myKeys = [
           , (("M-<Tab>"), spawn "$HOME/bin/layout_switch.sh") -- Change keyboard layout
           , (("M-S-<Tab>"), spawn "fcitx -d &") -- Turn on japanese keyboard
           , (("M-C-<Tab>"), spawn "killall fcitx") -- Turn off japanese keyboard
-          , (("M-S-f"), spawn "feh --no-fehbg --bg-fill -z /home/yv/Pictures/Wallpapers") -- Set random wallpaper
+          -- , (("M-S-f"), spawn "feh --no-fehbg --bg-fill -z /home/yv/Pictures/Wallpapers") -- Set random wallpaper
           , (("M-<Escape>"), spawn "slock") -- Lockscreen
           , (("M-S-<Escape>"), spawn "~/bin/myshutdown") -- Turn computer off
           , (("<Print>"), spawn "scrot -fs -e 'mv $f ~/Pictures/shots/ && xclip -t image/png -selection c ~/Pictures/shots/$f'") -- Interactive screenshot
@@ -331,8 +330,8 @@ main = do
         normalBorderColor  = myNormalBorderColor,
         focusedBorderColor = myFocusedBorderColor,
         mouseBindings      = myMouseBindings,
-        -- layoutHook         = smartBorders . showWName' myShowWNameTheme $ myLayout, --Uncomment to show workspace name when switching workspaces
-        layoutHook         = smartBorders $ myLayout,
+        layoutHook         = smartBorders . showWName' myShowWNameTheme $ myLayout, --Uncomment to show workspace name when switching workspaces
+        -- layoutHook         = smartBorders $ myLayout,
         manageHook         = myManageHook <+> manageDocks,
         --handleEventHook    = myEventHook,
         logHook = dynamicLogWithPP $ filterOutWsPP [scratchpadWorkspaceTag]$ xmobarPP {
@@ -402,15 +401,16 @@ myScratchPads = [ NS "terminal" spawnTerm findTerm manageTerm
 -------------------
 -- Search prompt --
 -------------------
-archwiki, aur, reddit, nyaa :: S.SearchEngine
+archwiki, aur, reddit, nyaa, brave :: S.SearchEngine
 
 archwiki = S.searchEngine "archwiki" "https://wiki.archlinux.org/index.php?search="
-aur = S.searchEngine "aur" "https://aur.archlinux.org/packages/?O=0&K="
+aur      = S.searchEngine "aur" "https://aur.archlinux.org/packages/?O=0&K="
 reddit   = S.searchEngine "reddit" "https://www.reddit.com/search/?q="
-nyaa   = S.searchEngine "nyaa" "https://nyaa.si/?f=0&c=0_0&q="
+nyaa     = S.searchEngine "nyaa" "https://nyaa.si/?f=0&c=0_0&q="
+brave    = S.searchEngine "braveSearch" "https://search.brave.com/search?q="
 
 searchList :: [(String, S.SearchEngine)]
-searchList = [ ("d", S.duckduckgo)
+searchList = [ ("d", brave)
              , ("a", archwiki)
              , ("s", aur)
              , ("g", S.google)
@@ -421,7 +421,7 @@ searchList = [ ("d", S.duckduckgo)
 
 myXPConfig :: XPConfig
 myXPConfig = def
-             { font               = "xft:Hack:bold:size=12"
+             { font               = "xft:Hack:bold:size=16"
              , bgColor            = "#282a36"
              , fgColor            = "#f8f8f2"
              , bgHLight           = "#44475a"
