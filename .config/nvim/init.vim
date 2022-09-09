@@ -20,6 +20,9 @@ set colorcolumn=0
 set cursorline
 set nohlsearch
 set autochdir
+set fdm=marker
+set foldmarker={,}
+set foldtext=v:folddashes.substitute(getline(v:foldstart),'/\\*\\\|\\*/\\\|{{{\\d\\=','','g')
 let g:netrw_banner = 0
 let g:vim_json_conceal=0
 
@@ -139,10 +142,10 @@ nnoremap <Leader>p "+p
 vnoremap <Leader>p "+p
 
 " Save and generate latex
-" using script that is on $HOME/bin
 nnoremap <silent> <Leader>W :w<CR>:!pdflatex %<CR><CR>
 
 " Some toggles
 nnoremap <Leader>/ :set nohlsearch!<CR>
 nnoremap <Leader>\ :set wrap!<CR>
 nnoremap <Leader>] :set expandtab!<CR>
+nnoremap <Leader>z za
