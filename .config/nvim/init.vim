@@ -20,6 +20,7 @@ set colorcolumn=0
 set cursorline
 set nohlsearch
 set autochdir
+set linebreak
 set fdm=marker
 set foldmarker={,}
 set foldtext=v:folddashes.substitute(getline(v:foldstart),'/\\*\\\|\\*/\\\|{{{\\d\\=','','g')
