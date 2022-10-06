@@ -76,12 +76,12 @@ myStartupHook = do
       spawnOnce "volumeicon &"
       spawnOnce "nm-applet &"
       spawnOnce "~/bin/mytrayer.sh"
-      spawnOnce "xinput --set-prop 13 'libinput Accel Speed' -1"
-      spawnOnce "xinput --set-prop 13 'libinput Scroll Method Enabled' 0, 0, 1"
+      spawnOnce "xinput --set-prop 9 'libinput Accel Speed' -1"
+      spawnOnce "xinput --set-prop 9 'libinput Scroll Method Enabled' 0, 0, 1"
       spawnOnce "discord"
       spawnOnce "whatsdesk"
       -- spawnOnce "firefox"
-      spawnOnce "telegram-desktop"
+      -- spawnOnce "telegram-desktop"
       spawnOnce "picom -D 2"
       spawnOnce "qbittorrent"
       spawnOnce "pcmanfm -d"
@@ -236,15 +236,15 @@ myKeys = [
           , (("S-<Print>"), spawn "scrot -a 1440,0,1920,1080 -m -e 'mv $f ~/Pictures/shots/ && xclip -t image/png -selection c ~/Pictures/shots/$f'") -- First monitor screenshot
           , (("C-<Print>"), spawn "scrot -a 0,480,1440,900 -m -e 'mv $f ~/Pictures/shots/ && xclip -t image/png -selection c ~/Pictures/shots/$f'") -- Second monitor screenshot
           , (("C-S-<Print>"), spawn "scrot -m -e 'mv $f ~/Pictures/shots/ && xclip -t image/png -selection c ~/Pictures/shots/$f'") -- Both monitor screenshot
-          , (("M-<Scroll_lock>"), spawn "xinput --set-prop 13 'libinput Scroll Method Enabled' 0, 0, 1")
-          , (("M-S-<Scroll_lock>"), spawn "xinput --set-prop 13 'libinput Scroll Method Enabled' 0, 0, 0")
+          , (("M-<Scroll_lock>"), spawn "xinput --set-prop 9 'libinput Scroll Method Enabled' 0, 0, 1")
+          , (("M-S-<Scroll_lock>"), spawn "xinput --set-prop 9 'libinput Scroll Method Enabled' 0, 0, 0")
           , (("M-0"), windows copyToAll) -- window stick to all workspaces
           , (("M-S-0"), killAllOtherCopies) -- window not stick anymore
           , (("M-S-c"), kill1) -- window not stick to this workspace
 
           -- Launch applications --
           , (("M-S-h"), spawn (myTerminal ++ " -e htop")) -- Htop
-          , (("M-b"), spawn "brave") -- Launch Brave browser
+          , (("M-b"), spawn "firefox") -- Launch browser
           , (("M-d"), spawn "discord") -- Launch Discord
           , (("M-S-<Return>"), spawn (myTerminal)) -- Launch terminal
           , (("M-p"), spawn "dmenu_run -c -l 15") -- Launch dmenu
@@ -275,7 +275,7 @@ myKeys = [
           ]
 
           -- Search Prompts --
-          ++ [("M-w " ++ k, S.promptSearchBrowser myXPConfig "brave" f) | (k,f) <- searchList ]
+          ++ [("M-w " ++ k, S.promptSearchBrowser myXPConfig "firefox" f) | (k,f) <- searchList ]
 
           -- Needed for named scratchpads
 --            where nonNSP         = WSIs (return (\ws -> W.tag ws /= "NSP"))
@@ -410,7 +410,7 @@ nyaa     = S.searchEngine "nyaa" "https://nyaa.si/?f=0&c=0_0&q="
 brave    = S.searchEngine "braveSearch" "https://search.brave.com/search?q="
 
 searchList :: [(String, S.SearchEngine)]
-searchList = [ ("d", brave)
+searchList = [ ("b", brave)
              , ("a", archwiki)
              , ("s", aur)
              , ("g", S.google)
