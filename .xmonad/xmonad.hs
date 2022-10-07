@@ -76,8 +76,8 @@ myStartupHook = do
       spawnOnce "volumeicon &"
       spawnOnce "nm-applet &"
       spawnOnce "~/bin/mytrayer.sh"
-      spawnOnce "xinput --set-prop 9 'libinput Accel Speed' -1"
-      spawnOnce "xinput --set-prop 9 'libinput Scroll Method Enabled' 0, 0, 1"
+      spawnOnce "xinput --set-prop 'Kingston HyperX Pulsefire FPS Gaming Mouse' 'libinput Accel Speed' -1"
+      spawnOnce "xinput --set-prop 'Kingston HyperX Pulsefire FPS Gaming Mouse' 'libinput Scroll Method Enabled' 0, 0, 1"
       spawnOnce "discord"
       spawnOnce "whatsdesk"
       -- spawnOnce "firefox"
@@ -236,8 +236,8 @@ myKeys = [
           , (("S-<Print>"), spawn "scrot -a 1440,0,1920,1080 -m -e 'mv $f ~/Pictures/shots/ && xclip -t image/png -selection c ~/Pictures/shots/$f'") -- First monitor screenshot
           , (("C-<Print>"), spawn "scrot -a 0,480,1440,900 -m -e 'mv $f ~/Pictures/shots/ && xclip -t image/png -selection c ~/Pictures/shots/$f'") -- Second monitor screenshot
           , (("C-S-<Print>"), spawn "scrot -m -e 'mv $f ~/Pictures/shots/ && xclip -t image/png -selection c ~/Pictures/shots/$f'") -- Both monitor screenshot
-          , (("M-<Scroll_lock>"), spawn "xinput --set-prop 9 'libinput Scroll Method Enabled' 0, 0, 1")
-          , (("M-S-<Scroll_lock>"), spawn "xinput --set-prop 9 'libinput Scroll Method Enabled' 0, 0, 0")
+          , (("M-<Scroll_lock>"), spawn "xinput --set-prop 'Kingston HyperX Pulsefire FPS Gaming Mouse' 'libinput Scroll Method Enabled' 0, 0, 1")
+          , (("M-S-<Scroll_lock>"), spawn "xinput --set-prop 'Kingston HyperX Pulsefire FPS Gaming Mouse' 'libinput Scroll Method Enabled' 0, 0, 0")
           , (("M-0"), windows copyToAll) -- window stick to all workspaces
           , (("M-S-0"), killAllOtherCopies) -- window not stick anymore
           , (("M-S-c"), kill1) -- window not stick to this workspace

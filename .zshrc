@@ -1,9 +1,10 @@
-# autosuggest
+# autosuggest from https://github.com/zsh-users/zsh-autosuggestions
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#44475a,underline"
 bindkey '^\' autosuggest-accept   # CTRL-\ to accept
-bindkey '^M' autosuggest-execute  # CTRL-RETURN to execute
+bindkey '^]' autosuggest-execute  # CTRL-RETURN to execute
 bindkey '^@' forward-word         # CTRL-SPACE to accept word
+bindkey '^H' autosuggest-toggle   # CTRL-H to toggle sugestion
 
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
