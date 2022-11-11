@@ -108,8 +108,8 @@ alias pipupdate="pip freeze --user | cut -d'=' -f1 | xargs -n1 pip install -U"
 EDITOR="/usr/bin/nvim"
 
 # run on startup
-# $HOME/bin/ufetch
-colorscript exec arch
+$HOME/bin/ufetch
+# colorscript exec arch
 
 # zsh-syntax-highlighting https://github.com/zsh-users/zsh-syntax-highlighting
 source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

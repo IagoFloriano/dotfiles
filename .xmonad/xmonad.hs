@@ -81,7 +81,7 @@ myStartupHook = do
       spawnOnce "discord"
       spawnOnce "whatsdesk"
       -- spawnOnce "firefox"
-      -- spawnOnce "telegram-desktop"
+      spawnOnce "telegram-desktop"
       spawnOnce "picom -D 2"
       spawnOnce "qbittorrent"
       spawnOnce "pcmanfm -d"
