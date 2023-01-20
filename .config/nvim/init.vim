@@ -24,6 +24,7 @@ set linebreak
 set fdm=marker
 set foldmarker={,}
 set foldtext=v:folddashes.substitute(getline(v:foldstart),'/\\*\\\|\\*/\\\|{{{\\d\\=','','g')
+set foldlevelstart=20
 let g:netrw_banner = 0
 let g:vim_json_conceal=0
 
