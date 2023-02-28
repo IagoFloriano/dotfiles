@@ -6,15 +6,15 @@
 -- purple =  "#bd93f9" --
 -- red =  "#ff5555" --
 -- yellow = "#f1fa8c" --
-Config { font = "xft:Hack:weight=bold:pixelsize=12:antalias=true:hinting=true"
-       , additionalFonts = [ "xft:Awesome 5 Free Solid:antalias=true:hinting=true"
-                           , "xft:Awesome 5 Brands:pixelsize=12:antalias=true:hinting=true"
-                           , "xft:Hack:weight=bold:pixelsize=24:antalias=true:hinting=true"
+Config { font = "Hack Bold 10"
+       , additionalFonts = [ "Awesome 5 Free Solid 12"
+                           , "Awesome 5 Brands 12"
+                           , "Hack Bold 24"
        ]
        , bgColor = "#282a36"
        , fgColor = "#f8f8f2"
        , alpha = 255
-       , position = Top
+       , position = TopSize L 100 19
        , lowerOnStart = True
        , hideOnStart = False
        , allDesktops = True
