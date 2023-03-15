@@ -2,6 +2,7 @@
   "suggest.autoTrigger": "none",
   "suggest.selection": "first",
   "conceallevel": "0",
+  "vetur.trace.server": "verbose",
   "languageserver": {
     "haskell": {
       "command": "haskell-language-server-wrapper",

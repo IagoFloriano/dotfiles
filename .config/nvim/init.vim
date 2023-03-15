@@ -47,29 +47,38 @@ set mouse=nicr
 set mouse=a
 
 " Plugins
-call plug#begin('~/local/share/nvim/plugged')
+if exists('g:vscode')
+    " VSCode extension
+else
+  call plug#begin('~/local/share/nvim/plugged')
 
-Plug 'bfrg/vim-cpp-modern'
-Plug 'uiiaoo/java-syntax.vim'
-Plug 'vim-python/python-syntax'
-Plug 'calviken/vim-gdscript3'
-Plug 'Yggdroot/indentLine'
-Plug 'vimsence/vimsence'
-Plug 'neovimhaskell/haskell-vim'
-Plug 'alx741/vim-hindent'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  Plug 'bfrg/vim-cpp-modern'
+  Plug 'uiiaoo/java-syntax.vim'
+  Plug 'vim-python/python-syntax'
+  Plug 'calviken/vim-gdscript3'
+  Plug 'Yggdroot/indentLine'
+  Plug 'vimsence/vimsence'
+  Plug 'neovimhaskell/haskell-vim'
+  Plug 'alx741/vim-hindent'
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  Plug 'sheerun/vim-polyglot'
 
-call plug#end()
+  call plug#end()
 
-" Coc
-inoremap <silent><expr> <c-space> coc#refresh()
+  " Coc
+  inoremap <silent><expr> <c-space> coc#refresh()
+  inoremap <expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 
-" Cpp modern configs
-let g:cpp_attributes_highlight = 1
-let g:cpp_member_highlight = 1
+  " Vetur
+  "let vetur.validation.interpolation = false
 
-" Python Syntax highliting
-let g:python_highlight_all = 1
+  " Cpp modern configs
+  let g:cpp_attributes_highlight = 1
+  let g:cpp_member_highlight = 1
+
+  " Python Syntax highliting
+  let g:python_highlight_all = 1
+endif
 
 " Indent
 let g:indentLine_char_list = ['▏','|', '¦', '┆', '┊']
