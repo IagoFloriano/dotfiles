@@ -381,9 +381,14 @@ myScratchPads = [ NS "terminal" spawnTerm findTerm manageTerm
   findSpot   = className =? "Spotify"
   manageSpot = myScratchpadFloat
   
-  spawnCalendar  = "korganizer"
-  findCalendar   = className =? "korganizer"
-  manageCalendar = myScratchpadFloat
+  spawnCalendar  = "gsimplecal"
+  findCalendar   = className =? "Gsimplecal"
+  manageCalendar = customFloating $ W.RationalRect l t w h
+                    where
+                    h = 0.1 
+                    w = 0.4
+                    t = 0.4
+                    l = 0.3
   
   spawnTorrent  = "qbittorrent"
   findTorrent   = className =? "qBittorrent"
