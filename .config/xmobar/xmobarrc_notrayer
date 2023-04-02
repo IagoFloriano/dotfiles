@@ -21,7 +21,7 @@ Config { font = "Hack Bold 10"
        , persistent = True
        , iconRoot = "."
        , commands = [ 
-                      Run Date "%H:%M:%S %a %_d/%m/%y" "date" 10 --Clock
+                      Run Date "<fc=#f1fa8c>%H:%M:%S %a %_d/%m/%y</fc>" "date" 10 --Clock
                     , Run StdinReader --Things from xmonad
                     , Run Com "/home/yv/.config/xmobar/trayer-padding-icon.sh" [] "trayerpad" 10 --Trayer spacing
                     , Run BatteryP ["BAT1"]                                --Battery
@@ -34,8 +34,16 @@ Config { font = "Hack Bold 10"
                     , Run Kbd [("us(intl)", "INTL"), ("us", "US"), ("br","BR")]
                     , Run Cpu ["-t", "Cpu:<total>%"] 10
                     , Run Memory ["-t", "Ram:<used>/<total>"] 10
+                    , Run Weather "SBCT"
+                                [ "-t", "<tempC>°C"
+                                , "-L", "13"
+                                , "-H", "24"
+                                , "--normal", "#f1fa8c"
+                                , "--high", "#ff5555"
+                                , "--low", "#8be9fd"
+                                ] 18000
                    ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = " %StdinReader%}{ <fc=#50fa7b>%cpu%</fc><fn=3>|</fn><fc=#ffb86c>%memory%</fc><fn=3>|</fn><fc=#8be9fd>%kbd%</fc><fn=3>|</fn><fc=#f1fa8c>%date%</fc> "
+       , template = " %StdinReader%}{ <fc=#50fa7b>%cpu%</fc><fn=3>|</fn><fc=#ffb86c>%memory%</fc><fn=3>|</fn><fc=#8be9fd>%kbd%</fc><fn=3>|</fn>%date% %SBCT% "
        }
