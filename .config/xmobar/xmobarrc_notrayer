@@ -24,16 +24,17 @@ Config { font = "Hack Bold 10"
                       Run Date "<fc=#f1fa8c>%H:%M:%S %a %_d/%m/%y</fc>" "date" 10 --Clock
                     , Run StdinReader --Things from xmonad
                     , Run Com "/home/yv/.config/xmobar/trayer-padding-icon.sh" [] "trayerpad" 10 --Trayer spacing
-                    , Run BatteryP ["BAT1"]                                --Battery
-                                   ["-t", "<acstatus><left>%</fc>",        --How to be displayed
-                                    "--", "-O", "<fc=#33ee33>^",           --Charging
-                                    "-i", "<fc=#f8f8f2>",                  --Idle
-                                    "-o", "<fc=#ee3333>v"                  --Discharging
+                    , Run BatteryP ["BAT1"]                                    --Battery
+                                   ["-t", "<acstatus><left>%/<timeleft></fc>", --How to be displayed
+                                    "--", "-O", "<box type=Bottom width=2 mb=2 color=#50fa7b><fc=#50fa7b>^", --Charging
+                                    "-i",       "<box type=Bottom width=2 mb=2 color=#f8f8f2><fc=#f8f8f2>",  --Idle
+                                    "-o",       "<box type=Bottom width=2 mb=2 color=#ff5555><fc=#ff5555>v"  --Discharging
                                     ]
                                     50
                     , Run Kbd [("us(intl)", "INTL"), ("us", "US"), ("br","BR")]
                     , Run Cpu ["-t", "Cpu:<total>%"] 10
                     , Run Memory ["-t", "Ram:<used>/<total>"] 10
+                      -- stations ids https://weather.rap.ucar.edu/surface/stations.txt --
                     , Run Weather "SBCT"
                                 [ "-t", "<tempC>°C"
                                 , "-L", "13"
@@ -45,5 +46,5 @@ Config { font = "Hack Bold 10"
                    ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = " %StdinReader%}{ <fc=#50fa7b>%cpu%</fc><fn=3>|</fn><fc=#ffb86c>%memory%</fc><fn=3>|</fn><fc=#8be9fd>%kbd%</fc><fn=3>|</fn>%date% %SBCT% "
+       , template = " %StdinReader%}{ <box type=Bottom width=2 mb=2 color=#50fa7b><fc=#50fa7b>%cpu%</fc></box><hspace=12/><box type=Bottom width=2 mb=2 color=#ffb86c><fc=#ffb86c>%memory%</fc></box><hspace=12/><box type=Bottom width=2 mb=2 color=#8be9fd><fc=#8be9fd>%kbd%</fc></box><hspace=12/><box type=Bottom width=2 mb=2 color=#f1fa8c>%date% %SBCT%</box>"
        }
