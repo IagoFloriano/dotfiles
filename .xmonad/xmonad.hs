@@ -46,7 +46,8 @@ import XMonad.Layout.Accordion
 myTerminal      = "alacritty " -- Terminal emulator
 myBorderWidth   = 2 -- Border Width
 myModMask       = mod4Mask -- Mod mask (4 = super, 1 = lalt)
-myWorkspaces    = ["sys","img","www","chat","song","dev","game","vid","**"] -- Workspaces name
+myWorkspaces    = ["\xf121","\xf03e","\xf0ac","\xf075","\xf025","\xf120","\xf11b","\xf03d","\xf069"] -- Workspaces name with icons (font awesome 5 free)
+--myWorkspaces    = ["sys","img","www","chat","song","dev","game","vid","**"] -- Workspaces name
 -- myWorkspaces    = ["1","2","3","4","5","6","7","8","9"] -- Workspaces name
 myNormalBorderColor  = "#4d4d4d" -- Unfocoused window color
 myFocusedBorderColor = "#ff79c5" -- Focused window color
@@ -330,14 +331,15 @@ main = do
         normalBorderColor  = myNormalBorderColor,
         focusedBorderColor = myFocusedBorderColor,
         mouseBindings      = myMouseBindings,
-        layoutHook         = smartBorders . showWName' myShowWNameTheme $ myLayout, --Uncomment to show workspace name when switching workspaces
-        -- layoutHook         = smartBorders $ myLayout,
+        -- layoutHook         = smartBorders . showWName' myShowWNameTheme $ myLayout, --Uncomment to show workspace name when switching workspaces
+        layoutHook         = smartBorders $ myLayout,
         manageHook         = myManageHook <+> manageDocks,
         --handleEventHook    = myEventHook,
         logHook = dynamicLogWithPP $ filterOutWsPP [scratchpadWorkspaceTag]$ xmobarPP {
                       ppOutput = \x -> hPutStrLn xmproc0 x
                                     >> hPutStrLn xmproc1 x
-                    , ppCurrent = xmobarColor myVisibleWS "" . wrap "[" "]"         -- Current workspace
+                    , ppCurrent = xmobarColor myVisibleWS ""                        -- Current workspace when icons
+                    -- , ppCurrent = xmobarColor myVisibleWS "" . wrap "[" "]"         -- Current workspace
                     , ppVisible = xmobarColor myVisibleWS ""                        -- Visible but not current workspace
                     , ppHidden = xmobarColor myHiddenWS "" . wrap "*" ""            -- Hidden workspaces
                     , ppHiddenNoWindows = xmobarColor myHiddenEmptyWS ""            -- Hidden workspaces (no windows)
@@ -367,7 +369,7 @@ myScratchPads = [ NS "terminal" spawnTerm findTerm manageTerm
                 , NS "torrent" spawnTorrent findTorrent manageTorrent
                 , NS "jome" spawnJome findJome manageJome
                 ]
-  
+
   where
   spawnTerm  = myTerminal ++ " -t scratchpad"
   findTerm   = title =? "scratchpad"
