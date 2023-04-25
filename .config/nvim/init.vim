@@ -16,7 +16,7 @@ set undofile
 set incsearch
 set ic
 set splitbelow splitright
-set colorcolumn=0
+set colorcolumn=90
 set cursorline
 set nohlsearch
 set autochdir
@@ -26,7 +26,9 @@ set foldmarker={,}
 set foldtext=v:folddashes.substitute(getline(v:foldstart),'/\\*\\\|\\*/\\\|{{{\\d\\=','','g')
 set foldlevelstart=20
 let g:netrw_banner = 0
-let g:vim_json_conceal=0
+let g:vim_json_syntax_conceal = 0
+let g:vim_markdown_conceal = 0
+let g:vim_markdown_conceal_code_blocks = 0
 
 augroup CursorLine
 au!
@@ -78,11 +80,12 @@ else
 
   " Python Syntax highliting
   let g:python_highlight_all = 1
+
+  " Indent
+  let g:indentLine_char_list = ['▏','|', '¦', '┆', '┊']
+  nnoremap <Leader>H :HindentToggle
 endif
 
-" Indent
-let g:indentLine_char_list = ['▏','|', '¦', '┆', '┊']
-nnoremap <Leader>H :HindentToggle
 
 " Getter setter generator
 map <Leader>g mawv/ <CR>"ty/ <CR>wvwh"ny/getters<CR>$a<CR><CR><Esc>xxapublic<Esc>"tpa<Esc>"npbiget<Esc>l~ea()<CR>{<CR><Tab>return<Esc>"npa;<CR>}<Esc>=<CR><Esc>/setters<CR>$a<CR><CR><Esc>xxapublic void<Esc>"npbiset<Esc>l~ea(<Esc>"tpa <Esc>"npa)<CR>{<CR><Tab>this.<Esc>"npa=<Esc>"npa;<CR>}<Esc>=<CR>`ak
@@ -151,9 +154,6 @@ nnoremap <Leader>y "+y
 vnoremap <Leader>y "+y
 nnoremap <Leader>p "+p
 vnoremap <Leader>p "+p
-
-" Save and generate latex
-nnoremap <silent> <Leader>W :w<CR>:!pdflatex %<CR><CR>
 
 " Some toggles
 nnoremap <Leader>/ :set nohlsearch!<CR>
