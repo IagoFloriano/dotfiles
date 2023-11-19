@@ -46,8 +46,9 @@ Config { font = "Hack Bold 10"
                                 , "--high", "#ff5555"
                                 , "--low", "#8be9fd"
                                 ] 18000
+                    , Run Com "/home/yv/.config/xmobar/getvolume.sh" [] "volume" 1 -- volume
                    ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = " %StdinReader%}{ <box type=Bottom width=2 mb=2 color=#50fa7b><fc=#50fa7b>%cpu%</fc></box><hspace=12/><box type=Bottom width=2 mb=2 color=#ffb86c><fc=#ffb86c>%memory%</fc></box><hspace=12/><box type=Bottom width=2 mb=2 color=#bd93f9><fc=#bd93f9>%disku%</fc></box><hspace=12/><box type=Bottom width=2 mb=2 color=#8be9fd><fc=#8be9fd>%kbd%</fc></box><hspace=12/><box type=Bottom width=2 mb=2 color=#f1fa8c>%date% %SBCT%</box><fn=3>|</fn>%trayerpad%"
+       , template = " %StdinReader%}{ <box type=Bottom width=2 mb=2 color=#50fa7b><fc=#50fa7b>%cpu%</fc></box><hspace=12/><box type=Bottom width=2 mb=2 color=#ffb86c><fc=#ffb86c>%memory%</fc></box><hspace=12/><box type=Bottom width=2 mb=2 color=#bd93f9><fc=#bd93f9>%disku%</fc></box><hspace=12/><box type=Bottom width=2 mb=2 color=#8be9fd><fc=#8be9fd>%kbd%</fc></box><hspace=12/><box type=Bottom width=2 mb=2 color=#f1fa8c>%date% %SBCT%</box> %volume%<fn=3>|</fn>%trayerpad%"
        }

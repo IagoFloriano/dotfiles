@@ -46,7 +46,7 @@ import XMonad.Layout.Accordion
 myTerminal      = "alacritty " -- Terminal emulator
 myBorderWidth   = 2 -- Border Width
 myModMask       = mod4Mask -- Mod mask (4 = super, 1 = lalt)
-myWorkspaces    = ["\xf121","\xf03e","\xf0ac","\xf075","\xf025","\xf120","\xf11b","\xf03d","\xf069"] -- Workspaces name with icons (font awesome 5 free)
+myWorkspaces    = ["\xf121","\xf03e","\xf0ac","\xf075","\xf8d7","\xf120","\xf11b","\xf03d","\xf069"] -- Workspaces name with icons (font awesome 5 free)
 --myWorkspaces    = ["sys","img","www","chat","song","dev","game","vid","**"] -- Workspaces name
 -- myWorkspaces    = ["1","2","3","4","5","6","7","8","9"] -- Workspaces name
 myNormalBorderColor  = "#4d4d4d" -- Unfocoused window color
@@ -81,14 +81,16 @@ myStartupHook = do
       spawnOnce "xinput --set-prop 'Kingston HyperX Pulsefire FPS Gaming Mouse' 'libinput Scroll Method Enabled' 0, 0, 1"
       spawnOnce "discord"
       spawnOnce "whatsdesk"
-      -- spawnOnce "firefox"
       spawnOnce "telegram-desktop"
+      -- spawnOnce "firefox"
+      spawnOnce "thunderbird"
       spawnOnce "picom -D 2"
       spawnOnce "qbittorrent"
       spawnOnce "pcmanfm -d"
       -- spawnOnce "noisetorch -i"
       spawnOnce "setwacom"
       spawnOnce "steam -silent"
+      spawnOnce "~/bin/layout_switch intl"
       -- spawnOnce "insync start"
 
 -------------
@@ -177,6 +179,7 @@ myManageHook = composeAll
     , className =? "Rhythmbox"       --> doShift ( myWorkspaces !! 4 )
     , className =? "Steam"           --> doShift ( myWorkspaces !! 6 )
     , className =? "Gamehub"         --> doShift ( myWorkspaces !! 6 )
+    , className =? "thunderbird"     --> doShift ( myWorkspaces !! 8 )
     , className =? "Steam"           --> doCenterFloat
     , resource  =? "desktop_window"  --> doIgnore
     , resource  =? "kdesktop"        --> doIgnore
@@ -194,6 +197,9 @@ myKeys = [
           , (("S-<XF86MonBrightnessDown>"), spawn "backlight_control 1") -- Min brightness
           , (("<XF86MonBrightnessDown>"), spawn "backlight_control -5") -- Decrease brightness
           , (("<XF86WLAN>"), spawn "nm-connection-editor") -- Wifi configs
+          , (("<XF86AudioRaiseVolume>"), spawn "pamixer -i 5") -- Increase volume by 5%
+          , (("<XF86AudioLowerVolume>"), spawn "pamixer -d 5") -- Decrease volume by 5%
+          , (("<XF86AudioMute>"), spawn "pamixer -t") -- Toggle mute
 
           -- Window control --
           , (("M-="), sendMessage ToggleStruts) -- Toggle xmobar
@@ -254,7 +260,7 @@ myKeys = [
           , (("M-<F4>"), spawn "pavucontrol") -- Sound configs
           , (("M-g"), spawn "gimp") -- Launch Gimp
           , (("M-u"), spawn "godot") -- Launch Godot
-          , (("M-u"), spawn "freetube") -- Launch Freetube
+          , (("M-y"), spawn "freetube") -- Launch Freetube
           , (("M-s r"), spawn "rhythmbox") -- Lauch RhythmBox
           , (("M-S-p"), spawn "gcolor2") -- Color picker
           , (("M-i"), spawn "insync show") -- Insync
