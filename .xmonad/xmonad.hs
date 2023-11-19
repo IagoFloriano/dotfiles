@@ -254,6 +254,7 @@ myKeys = [
           , (("M-<F4>"), spawn "pavucontrol") -- Sound configs
           , (("M-g"), spawn "gimp") -- Launch Gimp
           , (("M-u"), spawn "godot") -- Launch Godot
+          , (("M-u"), spawn "freetube") -- Launch Freetube
           , (("M-s r"), spawn "rhythmbox") -- Lauch RhythmBox
           , (("M-S-p"), spawn "gcolor2") -- Color picker
           , (("M-i"), spawn "insync show") -- Insync
