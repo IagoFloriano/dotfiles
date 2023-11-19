@@ -249,7 +249,7 @@ myKeys = [
           , (("M-d"), spawn "discord") -- Launch Discord
           , (("M-S-<Return>"), spawn (myTerminal)) -- Launch terminal
           , (("M-p"), spawn "dmenu_run -c -l 15") -- Launch dmenu
-          , (("M-f"), spawn "~/bin/files") -- Lauch file explorer
+          , (("M-f"), spawn "pcmanfm") -- Lauch file explorer
           , (("M-v"), spawn "~/bin/permpastebin") -- Lauch pastebin
           , (("M-<F4>"), spawn "pavucontrol") -- Sound configs
           , (("M-g"), spawn "gimp") -- Launch Gimp
