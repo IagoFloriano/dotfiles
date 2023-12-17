@@ -57,7 +57,6 @@ else
   Plug 'bfrg/vim-cpp-modern'
   Plug 'uiiaoo/java-syntax.vim'
   Plug 'vim-python/python-syntax'
-  Plug 'calviken/vim-gdscript3'
   Plug 'Yggdroot/indentLine'
   Plug 'vimsence/vimsence'
   Plug 'neovimhaskell/haskell-vim'
