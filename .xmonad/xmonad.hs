@@ -324,6 +324,8 @@ myEventHook = ewmhFullscreen
 -- Main --
 ----------
 
+boxWrap x = wrap ("<box type=Bottom width=2 mb=2 color=" ++ x ++ ">") "</box>"
+
 main = do
   xmproc0 <- spawnPipe "xmobar -x 0 $HOME/.config/xmobar/xmobarrc"
   xmproc1 <- spawnPipe "xmobar -x 1 $HOME/.config/xmobar/xmobarrc_notrayer"
@@ -345,7 +347,7 @@ main = do
         logHook = dynamicLogWithPP $ filterOutWsPP [scratchpadWorkspaceTag]$ xmobarPP {
                       ppOutput = \x -> hPutStrLn xmproc0 x
                                     >> hPutStrLn xmproc1 x
-                    , ppCurrent = xmobarColor myVisibleWS ""                        -- Current workspace when icons
+                    , ppCurrent = xmobarColor myVisibleWS "" . boxWrap myVisibleWS  -- Current workspace when icons
                     -- , ppCurrent = xmobarColor myVisibleWS "" . wrap "[" "]"         -- Current workspace
                     , ppVisible = xmobarColor myVisibleWS ""                        -- Visible but not current workspace
                     , ppHidden = xmobarColor myHiddenWS "" . wrap "*" ""            -- Hidden workspaces
