@@ -34,8 +34,9 @@ Config { font = "Hack Bold 10"
                     , Run Kbd [("us(intl)", "INTL"), ("us", "US"), ("br","BR")]
                     , Run Cpu ["-t", "Cpu:<total>%"] 10
                     , Run Memory ["-t", "Ram:<used>/<total>"] 10
-                    , Run DiskU [("/","SSD:<used>/<size>"),
-                                 ("/media/HD","HD:<used>/<size>")] 
+                    , Run DiskU [("/","1:<used>/<size>"),
+                                 ("/media/SSD","2:<used>/<size>"), 
+                                 ("/media/HD","3:<used>/<size>")] 
                                  [] 20
                       -- stations ids https://weather.rap.ucar.edu/surface/stations.txt --
                     , Run Weather "SBCT"
@@ -45,6 +46,7 @@ Config { font = "Hack Bold 10"
                                 , "--normal", "#f1fa8c"
                                 , "--high", "#ff5555"
                                 , "--low", "#8be9fd"
+                                , "-x", "?"
                                 ] 18000
                     , Run Com "/home/yv/.config/xmobar/getvolume.sh" [] "volume" 1 -- volume
                    ]

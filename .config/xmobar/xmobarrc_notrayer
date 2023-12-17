@@ -42,6 +42,7 @@ Config { font = "Hack Bold 10"
                                 , "--normal", "#f1fa8c"
                                 , "--high", "#ff5555"
                                 , "--low", "#8be9fd"
+                                , "-x", "?"
                                 ] 18000
                     , Run Com "/home/yv/.config/xmobar/getvolume.sh" [] "volume" 1 -- volume
                    ]
