@@ -52,7 +52,7 @@ set mouse=a
 if exists('g:vscode')
     " VSCode extension
 else
-  call plug#begin('~/local/share/nvim/plugged')
+  call plug#begin('~/.local/share/nvim/plugged')
 
   Plug 'bfrg/vim-cpp-modern'
   Plug 'uiiaoo/java-syntax.vim'
