@@ -200,6 +200,9 @@ myKeys = [
           , (("<XF86AudioRaiseVolume>"), spawn "pamixer -i 5") -- Increase volume by 5%
           , (("<XF86AudioLowerVolume>"), spawn "pamixer -d 5") -- Decrease volume by 5%
           , (("<XF86AudioMute>"), spawn "pamixer -t") -- Toggle mute
+          , (("<XF86AudioPlay>"), spawn "rhythmbox-client --play-pause") -- Pause play rhythmbox
+          , (("<XF86AudioNext>"), spawn "rhythmbox-client --next") -- Next song on rhythmbox
+          , (("<XF86AudioPrev>"), spawn "rhythmbox-client --previous") -- Previous song on rhythmbox
 
           -- Window control --
           , (("M-="), sendMessage ToggleStruts) -- Toggle xmobar
