@@ -117,6 +117,7 @@ nnoremap <Leader><tab> :bn<CR>
 nnoremap <Leader><S-tab> :bp<CR>
 nnoremap <tab> :bn<CR>
 nnoremap <S-tab> :bp<CR>
+nnoremap \ :bp<CR>
 nnoremap <Leader>x :bd<CR>:vs<CR>
 nnoremap <Leader>d :bd<CR>
 inoremap <C-tab> <Esc>:bn<CR>
