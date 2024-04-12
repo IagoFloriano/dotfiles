@@ -167,22 +167,23 @@ myLayout = avoidStruts (tiled ||| mTiled ||| full ||| centered ||| floatLayout) 
 --
 myManageHook = composeAll
     [
-      resource =? "Godot_Engine"    --> doCenterFloat
-    , className =? "Gimp"           --> doCenterFloat
-    , className =? "Gimp"           --> doShift ( myWorkspaces !! 1 )
-    , className =? "krita"          --> doShift ( myWorkspaces !! 1 )
-    --, className =? "Brave-browser"   --> doShift ( myWorkspaces !! 2 )
-    , className =? "discord"         --> doShift ( myWorkspaces !! 3 )
-    , className =? "whatsdesk"       --> doShift ( myWorkspaces !! 3 )
-    -- , className =? "firefox"         --> doShift ( myWorkspaces !! 3 )
-    , className =? "TelegramDesktop" --> doShift ( myWorkspaces !! 3 )
-    , className =? "Rhythmbox"       --> doShift ( myWorkspaces !! 4 )
-    , className =? "Steam"           --> doShift ( myWorkspaces !! 6 )
-    , className =? "Gamehub"         --> doShift ( myWorkspaces !! 6 )
-    , className =? "thunderbird"     --> doShift ( myWorkspaces !! 8 )
-    , className =? "Steam"           --> doCenterFloat
-    , resource  =? "desktop_window"  --> doIgnore
-    , resource  =? "kdesktop"        --> doIgnore
+      resource =? "Godot_Engine"       --> doCenterFloat
+    , className =? "Gimp"              --> doCenterFloat
+    , className =? "Gimp"              --> doShift ( myWorkspaces !! 1 )
+    , className =? "krita"             --> doShift ( myWorkspaces !! 1 )
+    --, className =? "Brave-browser"     --> doShift ( myWorkspaces !! 2 )
+    , className =? "discord"           --> doShift ( myWorkspaces !! 3 )
+    , className =? "whatsdesk"         --> doShift ( myWorkspaces !! 3 )
+    -- , className =? "firefox"           --> doShift ( myWorkspaces !! 3 )
+    , className =? "TelegramDesktop"   --> doShift ( myWorkspaces !! 3 )
+    , className =? "Rhythmbox"         --> doShift ( myWorkspaces !! 4 )
+    , className =? "Steam"             --> doShift ( myWorkspaces !! 6 )
+    , className =? "Gamehub"           --> doShift ( myWorkspaces !! 6 )
+    , className =? "thunderbird"       --> doShift ( myWorkspaces !! 8 )
+    , className =? "Steam"             --> doCenterFloat
+    , resource  =? "kdeconnectd"       --> doFullFloat
+    , resource  =? "desktop_window"    --> doIgnore
+    , resource  =? "kdesktop"          --> doIgnore
     , (className =? "Brave-browser" <&&> resource =? "Dialog") --> doFloat -- float brave dialog
     ] <+> namedScratchpadManageHook myScratchPads
 
@@ -278,6 +279,7 @@ myKeys = [
           , (("M-s d"), namedScratchpadAction myScratchPads "calendar")
           , (("M-s q"), namedScratchpadAction myScratchPads "torrent")
           , (("M-s j"), namedScratchpadAction myScratchPads "jome") --emoji input app
+          , (("M-s t"), namedScratchpadAction myScratchPads "temps")
 
           -- XMonad --
           , (("M-S-q"), io (exitWith ExitSuccess)) -- Logout
@@ -380,6 +382,7 @@ myScratchPads = [ NS "terminal" spawnTerm findTerm manageTerm
                 , NS "calendar" spawnCalendar findCalendar manageCalendar
                 , NS "torrent" spawnTorrent findTorrent manageTorrent
                 , NS "jome" spawnJome findJome manageJome
+                , NS "temps" spawnTemps findTemps manageTemps
                 ]
 
   where
@@ -417,13 +420,15 @@ myScratchPads = [ NS "terminal" spawnTerm findTerm manageTerm
                t = 0.2
                l = 0.2
 
+  spawnTemps  = myTerminal ++ " -t temps -e watch -n 1 sensors"
+  findTemps   = title =? "temps"
+  manageTemps = myScratchpadFloat
 -------------------
 -- Search prompt --
 -------------------
-archwiki, aur, reddit, nyaa, brave :: S.SearchEngine
+archwiki, reddit, nyaa, brave :: S.SearchEngine
 
 archwiki = S.searchEngine "archwiki" "https://wiki.archlinux.org/index.php?search="
-aur      = S.searchEngine "aur" "https://aur.archlinux.org/packages/?O=0&K="
 reddit   = S.searchEngine "reddit" "https://www.reddit.com/search/?q="
 nyaa     = S.searchEngine "nyaa" "https://nyaa.si/?f=0&c=0_0&q="
 brave    = S.searchEngine "braveSearch" "https://search.brave.com/search?q="
@@ -431,7 +436,7 @@ brave    = S.searchEngine "braveSearch" "https://search.brave.com/search?q="
 searchList :: [(String, S.SearchEngine)]
 searchList = [ ("b", brave)
              , ("a", archwiki)
-             , ("s", aur)
+             , ("s", S.aur)
              , ("g", S.google)
              , ("y", S.youtube)
              , ("r", reddit)
