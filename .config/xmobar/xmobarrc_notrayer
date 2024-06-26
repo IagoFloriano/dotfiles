@@ -33,7 +33,10 @@ Config { font = "Hack Bold 10"
                                     50
                     , Run Kbd [("us(intl)", "INTL"), ("us", "US"), ("br","BR")]
                     , Run Cpu ["-t", "Cpu:<total>%"] 10
-                    , Run Memory ["-t", "Ram:<used>/<total>"] 10
+                    , Run Memory ["-t", "Ram:<used>/<total> Gb",
+                                  "--", "--scale", "1024"
+                                  ]
+                                  10
                       -- stations ids https://weather.rap.ucar.edu/surface/stations.txt --
                     , Run Weather "SBCT"
                                 [ "-t", "<tempC>°C"
