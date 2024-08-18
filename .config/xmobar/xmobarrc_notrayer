@@ -21,7 +21,7 @@ Config { font = "Hack Bold 10"
        , persistent = True
        , iconRoot = "."
        , commands = [ 
-                      Run Date "<fc=#f1fa8c>%H:%M:%S %a %_d/%m/%y</fc>" "date" 10 --Clock
+                      Run DateZone "<fc=#f1fa8c>%H:%M:%S %a %_d/%m/%y</fc>" "" "" "date" 10 --Clock
                     , Run StdinReader --Things from xmonad
                     , Run Com "/home/yv/.config/xmobar/trayer-padding-icon.sh" [] "trayerpad" 10 --Trayer spacing
                     , Run BatteryP ["BAT1"]                                    --Battery
