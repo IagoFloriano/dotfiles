@@ -1,0 +1,157 @@
+// -*- mode: jsonc -*-
+[{
+    "layer": "top", // Waybar at top layer
+    "position": "top", // Waybar position (top|bottom|left|right)
+    "height": 19, // Waybar height (to be removed for auto height)
+    // "width": 1280, // Waybar width
+    "spacing": 2, // Gaps between modules (2px)
+    "fixed-center": false,
+    "reload_style_on_change": true,
+    "output": "DP-1",
+    "include": "~/.config/waybar/default-modules.json",
+    // Choose the order of the modules
+    "modules-left": [
+        "hyprland/workspaces",
+        "custom/media"
+    ],
+    "modules-center": [
+        "hyprland/window"
+    ],
+    "modules-right": [
+        "cpu",
+        "memory",
+        "disk",
+        "disk#disk2",
+        "disk#disk3",
+        "hyprland/language",
+        "clock",
+        // weather (need to find)
+        // "mpd", // music player daemon https://github.com/Alexays/Waybar/wiki/Module:-MPD
+        "pulseaudio",
+        "tray"
+    ],
+    // Modules configuration
+},
+{
+    "layer": "top", // Waybar at top layer
+    "position": "top", // Waybar position (top|bottom|left|right)
+    "height": 19, // Waybar height (to be removed for auto height)
+    // "width": 1280, // Waybar width
+    "spacing": 2, // Gaps between modules (2px)
+    "fixed-center": false,
+    "reload_style_on_change": true,
+    "output": "DP-2",
+    "include": "~/.config/waybar/default-modules.json",
+    // Choose the order of the modules
+    "modules-left": [
+        "hyprland/workspaces",
+        "custom/media"
+    ],
+    "modules-center": [
+        "hyprland/window"
+    ],
+    "modules-right": [
+        "cpu",
+        "memory",
+        "hyprland/language",
+        "clock",
+        // weather (need to find)
+        // "mpd", // music player daemon https://github.com/Alexays/Waybar/wiki/Module:-MPD
+        "pulseaudio",
+        "tray"
+    ],
+    // Modules configuration
+},
+]
+
+
+
+// to look later
+    //"custom/power": {
+    //    "format" : "⏻ ",
+    //    "tooltip": false,
+    //    "menu": "on-click",
+    //    "menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
+    //    "menu-actions": {
+    //        "shutdown": "shutdown",
+    //        "reboot": "reboot",
+    //        "suspend": "systemctl suspend",
+    //        "hibernate": "systemctl hibernate"
+    //    }
+    //}
+    //"battery": {
+    //    "states": {
+    //        // "good": 95,
+    //        "warning": 30,
+    //        "critical": 15
+    //    },
+    //    "format": "{capacity}% {icon}",
+    //    "format-full": "{capacity}% {icon}",
+    //    "format-charging": "{capacity}% ",
+    //    "format-plugged": "{capacity}% ",
+    //    "format-alt": "{time} {icon}",
+    //    // "format-good": "", // An empty format will hide the module
+    //    // "format-full": "",
+    //    "format-icons": ["", "", "", "", ""]
+    //},
+    //"battery#bat2": {
+    //    "bat": "BAT2"
+    //},
+    //"power-profiles-daemon": {
+    //    "format": "{icon}",
+    //    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+    //    "tooltip": true,
+    //    "format-icons": {
+    //        "default": "",
+    //        "performance": "",
+    //        "balanced": "",
+    //        "power-saver": ""
+    //    }
+    //},
+    //"network": {
+    //    // "interface": "wlp2*", // (Optional) To force the use of this interface
+    //    "format-wifi": "{essid} ({signalStrength}%) ",
+    //    "format-ethernet": "{ipaddr}/{cidr} ",
+    //    "tooltip-format": "{ifname} via {gwaddr} ",
+    //    "format-linked": "{ifname} (No IP) ",
+    //    "format-disconnected": "Disconnected ⚠",
+    //    "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    //},
+    //"mpd": {
+    //    "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
+    //    "format-disconnected": "Disconnected ",
+    //    "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+    //    "unknown-tag": "N/A",
+    //    "interval": 5,
+    //    "consume-icons": {
+    //        "on": " "
+    //    },
+    //    "random-icons": {
+    //        "off": "<span color=\"#f53c3c\"></span> ",
+    //        "on": " "
+    //    },
+    //    "repeat-icons": {
+    //        "on": " "
+    //    },
+    //    "single-icons": {
+    //        "on": "1 "
+    //    },
+    //    "state-icons": {
+    //        "paused": "",
+    //        "playing": ""
+    //    },
+    //    "tooltip-format": "MPD (connected)",
+    //    "tooltip-format-disconnected": "MPD (disconnected)"
+    //},
+    //"custom/media": {
+    //    "format": "{icon} {}",
+    //    "return-type": "json",
+    //    "max-length": 40,
+    //    "format-icons": {
+    //        "spotify": "",
+    //        "default": "🎜"
+    //    },
+    //    "escape": true,
+    //    "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
+    //    // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    //},

@@ -1,0 +1,62 @@
+{
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "warp-on-scroll": false,
+        "format": "{icon}",
+        "format-icons": {
+            "1": "",
+            "2": "",
+            "3": "",
+            "4": "",
+            "5": "",
+            "6": "",
+            "7": "",
+            "8": "",
+            "9": "*",
+            "magic": "0"
+        },
+        "show-special": true,
+        "persistent-workspaces": {
+            "DP-1": 9
+        }
+    },
+    "hyprland/window":{
+    },
+    "cpu": {
+        "format": "Cpu:{usage}%",
+        "tooltip": false
+    },
+    "memory": {
+        "format": "Ram:{}%"
+    },
+    "disk": {
+        "format": "1:{used}/{total}G",
+        "path": "/"
+    },
+    "disk#disk2": {
+        "format": "2:{used}/{total}G",
+        "path": "/media/SSD"
+    },
+    "disk#disk3": {
+        "format": "3:{used}/{total}G",
+        "path": "/media/HD"
+    },
+    "hyprland/language": {
+        "format-en": "US",
+        "format-en-intl": "INTL"
+    },
+    "clock": {
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format": "{:%H:%M:%S %a %d/%m/%y}",
+        "locale": "pt_BR.UTF8"
+    },
+    "pulseaudio": {
+        "scroll-step": 5,
+        "format": "{volume}%",
+        "on-click": "pavucontrol"
+    },
+    "tray": {
+        "icon-size": 19
+    }
+}
