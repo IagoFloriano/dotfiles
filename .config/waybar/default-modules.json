@@ -19,7 +19,8 @@
         "show-special": true,
         "persistent-workspaces": {
             "DP-1": 9
-        }
+        },
+        "on-click": ""
     },
     "hyprland/window":{
     },
@@ -57,6 +58,6 @@
         "on-click": "pavucontrol"
     },
     "tray": {
-        "icon-size": 19
+        "icon-size": 18
     }
 }

@@ -11,8 +11,8 @@
     "include": "~/.config/waybar/default-modules.json",
     // Choose the order of the modules
     "modules-left": [
-        "hyprland/workspaces",
-        "custom/media"
+        "hyprland/workspaces"
+        //"custom/media"
     ],
     "modules-center": [
         "hyprland/window"
@@ -23,13 +23,13 @@
         "disk",
         "disk#disk2",
         "disk#disk3",
-        "hyprland/language",
+        // "hyprland/language",
         "clock",
         // weather (need to find)
         // "mpd", // music player daemon https://github.com/Alexays/Waybar/wiki/Module:-MPD
         "pulseaudio",
         "tray"
-    ],
+    ]
     // Modules configuration
 },
 {
@@ -40,7 +40,7 @@
     "spacing": 2, // Gaps between modules (2px)
     "fixed-center": false,
     "reload_style_on_change": true,
-    "output": "DP-2",
+    "output": "!DP-1",
     "include": "~/.config/waybar/default-modules.json",
     // Choose the order of the modules
     "modules-left": [
@@ -53,12 +53,11 @@
     "modules-right": [
         "cpu",
         "memory",
-        "hyprland/language",
+        // "hyprland/language",
         "clock",
         // weather (need to find)
         // "mpd", // music player daemon https://github.com/Alexays/Waybar/wiki/Module:-MPD
-        "pulseaudio",
-        "tray"
+        "pulseaudio"
     ],
     // Modules configuration
 },
