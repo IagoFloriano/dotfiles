@@ -15,7 +15,7 @@ unsetopt beep
 bindkey -v
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '/home/iago/.zshrc'
+zstyle :compinstall filename '/home/yv/.zshrc'
 # End of lines added by compinstall
 autoload -U colors && colors
 
@@ -35,6 +35,10 @@ ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[green]%}%{✔ %G%}"
 PROMPT='%B%{$fg[green]%}%n@%M%{$reset_color%}:%{$fg[magenta]%}%~ $(git_super_status)
 %{$fg[green]%}->%{$reset_color%}%b '
 #     green   ->  reset color
+
+# setopt PROMPT_SUBST
+# PROMPT='%B%{$fg[green]%}%n@%M%{$reset_color%}:%{$fg[magenta]%}%~
+# %{$fg[green]%}->%{$reset_color%}%b '
 
 # vi mode
 bindkey -v
@@ -110,4 +114,4 @@ $HOME/bin/ufetch
 # colorscript exec arch
 
 # zsh-syntax-highlighting https://github.com/zsh-users/zsh-syntax-highlighting
-source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

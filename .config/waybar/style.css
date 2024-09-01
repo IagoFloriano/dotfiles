@@ -1,5 +1,7 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
+    border: none;
+    border-radius: 0;
     font-family: Hack, FontAwesome, sans-serif;
     font-size: 12;
     font-weight: bold;
