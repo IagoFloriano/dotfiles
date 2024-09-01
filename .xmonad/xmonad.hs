@@ -73,25 +73,21 @@ myStartupHook = do
       spawnOnce "dunst"
       spawnOnce "lxqt-policykit-agent"
       spawnOnce "~/.fehbg"
-      -- spawnOnce "pamac-tray"
       spawnOnce "volumeicon &"
       spawnOnce "nm-applet &"
       spawnOnce "~/bin/mytrayer.sh"
-      spawnOnce "xinput --set-prop 'Kingston HyperX Pulsefire FPS Gaming Mouse' 'libinput Accel Speed' -1"
-      spawnOnce "xinput --set-prop 'Kingston HyperX Pulsefire FPS Gaming Mouse' 'libinput Scroll Method Enabled' 0, 0, 1"
+      spawnOnce "xinput --set-prop 'Logitech G502 HERO Gaming Mouse' 'libinput Accel Speed' -1"
+      spawnOnce "xinput --set-prop 'Logitech G502 HERO Gaming Mouse' 'libinput Scroll Method Enabled' 0, 0, 1"
       spawnOnce "discord"
       spawnOnce "whatsdesk"
       spawnOnce "telegram-desktop"
-      -- spawnOnce "firefox"
       spawnOnce "thunderbird"
       spawnOnce "picom -D 2"
       spawnOnce "qbittorrent"
       spawnOnce "pcmanfm -d"
-      -- spawnOnce "noisetorch -i"
       spawnOnce "setwacom"
       spawnOnce "steam -silent"
       spawnOnce "~/bin/layout_switch intl"
-      -- spawnOnce "insync start"
 
 -------------
 -- Layouts --
@@ -167,23 +163,24 @@ myLayout = avoidStruts (tiled ||| mTiled ||| full ||| centered ||| floatLayout) 
 --
 myManageHook = composeAll
     [
-      resource =? "Godot_Engine"       --> doCenterFloat
-    , className =? "Gimp"              --> doCenterFloat
-    , className =? "Gimp"              --> doShift ( myWorkspaces !! 1 )
-    , className =? "krita"             --> doShift ( myWorkspaces !! 1 )
-    --, className =? "Brave-browser"     --> doShift ( myWorkspaces !! 2 )
-    , className =? "discord"           --> doShift ( myWorkspaces !! 3 )
-    , className =? "whatsdesk"         --> doShift ( myWorkspaces !! 3 )
-    -- , className =? "firefox"           --> doShift ( myWorkspaces !! 3 )
-    , className =? "TelegramDesktop"   --> doShift ( myWorkspaces !! 3 )
-    , className =? "Rhythmbox"         --> doShift ( myWorkspaces !! 4 )
-    , className =? "Steam"             --> doShift ( myWorkspaces !! 6 )
-    , className =? "Gamehub"           --> doShift ( myWorkspaces !! 6 )
-    , className =? "thunderbird"       --> doShift ( myWorkspaces !! 8 )
-    , className =? "Steam"             --> doCenterFloat
-    , resource  =? "kdeconnectd"       --> doFullFloat
-    , resource  =? "desktop_window"    --> doIgnore
-    , resource  =? "kdesktop"          --> doIgnore
+       resource =? "Godot_Engine"         --> doCenterFloat
+     , className =? "Gimp"                --> doCenterFloat
+     , className =? "Gimp"                --> doShift ( myWorkspaces !! 1 )
+     , className =? "krita"               --> doShift ( myWorkspaces !! 1 )
+     --, className =? "Brave-browser"       --> doShift ( myWorkspaces !! 2 )
+     , className =? "discord"             --> doShift ( myWorkspaces !! 3 )
+     , className =? "whatsdesk"           --> doShift ( myWorkspaces !! 3 )
+     -- , className =? "firefox"             --> doShift ( myWorkspaces !! 3 )
+     , className =? "TelegramDesktop"     --> doShift ( myWorkspaces !! 3 )
+     , className =? "Rhythmbox"           --> doShift ( myWorkspaces !! 4 )
+     , className =? "Steam"               --> doShift ( myWorkspaces !! 6 )
+     , className =? "Gamehub"             --> doShift ( myWorkspaces !! 6 )
+     , className =? "thunderbird"         --> doShift ( myWorkspaces !! 8 )
+     , className =? "Steam"               --> doCenterFloat
+     , className =? "BeatSaberModManager" --> doCenterFloat
+     , resource  =? "kdeconnectd"         --> doFullFloat
+     , resource  =? "desktop_window"      --> doIgnore
+     , resource  =? "kdesktop"            --> doIgnore
     , (className =? "Brave-browser" <&&> resource =? "Dialog") --> doFloat -- float brave dialog
     ] <+> namedScratchpadManageHook myScratchPads
 
@@ -247,8 +244,8 @@ myKeys = [
           , (("S-<Print>"), spawn "scrot -a 1440,0,1920,1080 -m -e 'mv $f ~/Pictures/shots/ && xclip -t image/png -selection c ~/Pictures/shots/$f'") -- First monitor screenshot
           , (("C-<Print>"), spawn "scrot -a 0,480,1440,900 -m -e 'mv $f ~/Pictures/shots/ && xclip -t image/png -selection c ~/Pictures/shots/$f'") -- Second monitor screenshot
           , (("C-S-<Print>"), spawn "scrot -m -e 'mv $f ~/Pictures/shots/ && xclip -t image/png -selection c ~/Pictures/shots/$f'") -- Both monitor screenshot
-          , (("M-<Scroll_lock>"), spawn "xinput --set-prop 'Kingston HyperX Pulsefire FPS Gaming Mouse' 'libinput Scroll Method Enabled' 0, 0, 1")
-          , (("M-S-<Scroll_lock>"), spawn "xinput --set-prop 'Kingston HyperX Pulsefire FPS Gaming Mouse' 'libinput Scroll Method Enabled' 0, 0, 0")
+          , (("M-<Scroll_lock>"), spawn "xinput --set-prop 'Logitech G502 HERO Gaming Mouse' 'libinput Scroll Method Enabled' 0, 0, 1")
+          , (("M-S-<Scroll_lock>"), spawn "xinput --set-prop 'Logitech G502 HERO Gaming Mouse' 'libinput Scroll Method Enabled' 0, 0, 0")
           , (("M-0"), windows copyToAll) -- window stick to all workspaces
           , (("M-S-0"), killAllOtherCopies) -- window not stick anymore
           , (("M-S-c"), kill1) -- window not stick to this workspace
@@ -357,7 +354,7 @@ main = do
                     , ppVisible = xmobarColor myVisibleWS ""                        -- Visible but not current workspace
                     , ppHidden = xmobarColor myHiddenWS "" . wrap "*" ""            -- Hidden workspaces
                     , ppHiddenNoWindows = xmobarColor myHiddenEmptyWS ""            -- Hidden workspaces (no windows)
-                    , ppTitle = xmobarColor myActiveWindow "" . shorten 60          -- Title of active window
+                    , ppTitle = xmobarColor myActiveWindow "" . shorten 80          -- Title of active window
                     , ppSep =  "<fc=#ffffff><fn=3>|</fn></fc>"                      -- Separator character
                     , ppUrgent = xmobarColor myUrgent "" . wrap "!" "!"             -- Urgent workspace
                     , ppExtras  = [windowCount]                                     -- # of windows current workspace

@@ -58,9 +58,7 @@ else
   Plug 'uiiaoo/java-syntax.vim'
   Plug 'vim-python/python-syntax'
   Plug 'Yggdroot/indentLine'
-  Plug 'vimsence/vimsence'
   Plug 'neovimhaskell/haskell-vim'
-  Plug 'alx741/vim-hindent'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'sheerun/vim-polyglot'
 
