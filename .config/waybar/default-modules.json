@@ -14,7 +14,7 @@
             "7": "",
             "8": "",
             "9": "*",
-            "magic": "0"
+            "magic": "S"
         },
         "show-special": true,
         "persistent-workspaces": {
@@ -29,7 +29,7 @@
         "tooltip": false
     },
     "memory": {
-        "format": "Ram:{}%"
+        "format": "Ram:{used}/{total}"
     },
     "disk": {
         "format": "1:{used}/{total}G",
@@ -50,7 +50,8 @@
     "clock": {
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format": "{:%H:%M:%S %a %d/%m/%y}",
-        "locale": "pt_BR.UTF8"
+        "locale": "pt_BR.UTF8",
+        "interval": 1
     },
     "pulseaudio": {
         "scroll-step": 5,
@@ -58,6 +59,7 @@
         "on-click": "pavucontrol"
     },
     "tray": {
-        "icon-size": 18
+        "icon-size": 18,
+        "reverse-direction": true
     }
 }

@@ -1,6 +1,6 @@
 #!/bin/sh
 
-DMENU="wofi -d"
+DMENU="wofi --show drun -d"
 
 CHOICE=$(printf "Yes\nReboot\nNo" | $DMENU -c -l 3 -p "Turn off the computer")
 echo $CHOICE

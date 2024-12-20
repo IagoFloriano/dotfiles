@@ -106,6 +106,8 @@ alias gpull='git pull'
 alias rm='rm -I'
 alias pipupdate="pip freeze --user | cut -d'=' -f1 | xargs -n1 pip install -U"
 
+alias songs='yt-dlp --embed-thumbnail -x --audio-format mp3 --add-metadata "https://youtube.com/playlist?list=PLHZ3zKlk2w0uSiyEn11g1oVsPsXqvB9l6"'
+
 # non global variables
 EDITOR="/usr/bin/nvim"
 

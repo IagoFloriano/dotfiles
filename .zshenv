@@ -31,10 +31,14 @@ export LESSHISTFILE="$XDG_CACHE_HOME/less/history"
 export MPLAYER_HOME="$XDG_CONFIG_HOME/mplayer"
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
 
+# Fcitx
 export GTK_IM_MODULE='fcitx'
 export QT_IM_MODULE='fcitx'
 export SDL_IM_MODULE='fcitx'
 export XMODIFIERS='@im=fcitx'
+
+# For wayland
+QT_QPA_PLATFORM=wayland
 
 unset LANG
 source /etc/profile.d/locale.sh
