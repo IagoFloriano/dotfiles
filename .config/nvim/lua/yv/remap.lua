@@ -24,8 +24,7 @@ vim.keymap.set("n", "<Leader><S-tab>", ":bp<CR>")
 vim.keymap.set("n", "<tab>", ":bn<CR>")
 vim.keymap.set("n", "<S-tab>", ":bp<CR>")
 vim.keymap.set("n", "\\", ":bp<CR>")
-vim.keymap.set("n", "<Leader>x", ":bd<CR>:vs<CR>")
-vim.keymap.set("n", "<Leader>d", ":bd<CR>")
+vim.keymap.set("n", "<Leader>x", ":bd<CR>")
 vim.keymap.set("i", "<C-tab>", "<Esc>:bn<CR>")
 vim.keymap.set("i", "<C-S-tab>", "<Esc>:bp<CR>")
 
@@ -56,3 +55,18 @@ vim.keymap.set("n", "<Leader>/", ":set nohlsearch!<CR>")
 vim.keymap.set("n", "<Leader>\\", ":set wrap!<CR>")
 vim.keymap.set("n", "<Leader>]", ":set expandtab!<CR>")
 vim.keymap.set("n", "<Leader>z", "za")
+
+-- Move selected thing on visual mode
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
+-- Allow cursor to stay in the middle of screen when n ing searches
+vim.keymap.set("n", "n", "nzzzv")
+vim.keymap.set("n", "N", "Nzzzv")
+
+vim.keymap.set("x", "<leader>P", "\"_dP")
+vim.keymap.set("v", "<leader>d", "\"_d")
+vim.keymap.set("n", "<leader>d", "\"_d")
+vim.keymap.set("n", "<leader>D", "\"_D")
+
+vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])

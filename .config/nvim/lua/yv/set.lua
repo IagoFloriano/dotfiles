@@ -32,8 +32,13 @@ vim.opt.colorcolumn = "80"
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 
--- TODO: cursorline only on active pane
--- vim.opt.cursorline = true
--- vim.opt.cursorlineopt = "screenline"
+vim.opt.cursorline = true
+vim.cmd [[
+augroup CursorLine
+au!
+au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+au WinLeave * setlocal nocursorline
+augroup END
+]]
 
 vim.g.mapleader = " "
