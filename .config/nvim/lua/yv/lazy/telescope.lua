@@ -22,7 +22,8 @@ return {
     vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
     vim.keymap.set('n', '<C-f>', builtin.git_files, {})
     vim.keymap.set('n', '<leader>fG', function()
-      builtin.grep_string({ search = vim.fn.input("Grep > ") });
+      local word = vim.fn.expand("<cword>")
+      builtin.grep_string({ search = word });
     end)
     vim.keymap.set('n', '<leader>fg', builtin.live_grep)
   end,

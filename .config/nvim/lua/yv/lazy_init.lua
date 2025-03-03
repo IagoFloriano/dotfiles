@@ -16,6 +16,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- Setup lazy.nvim
-require("lazy").setup("yv.lazy")
-
--- "nvim-telescope/telescope.nvim",
+require("lazy").setup({
+  spec = "yv.lazy",
+  change_detection = { notify = false},
+})
