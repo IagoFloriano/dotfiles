@@ -1,9 +1,9 @@
 vim.keymap.set("n", "<leader>F", vim.cmd.Ex)
 
 -- Terminal commands
-vim.keymap.set("n", "<Leader>T"  , ":vs <CR>:terminal <CR>")
-vim.keymap.set("n", "<Leader>tT" , ":sp <CR>:terminal <CR>")
-vim.keymap.set("n", "<Leader>tt" , ":terminal<CR>")
+vim.keymap.set("n", "<Leader>T", ":vs <CR>:terminal <CR>")
+vim.keymap.set("n", "<Leader>tT", ":sp <CR>:terminal <CR>")
+vim.keymap.set("n", "<Leader>tt", ":terminal<CR>")
 
 -- Remap splits navigation to just SPACE + hjkl
 vim.keymap.set("n", "<Leader>h", "<C-w>h")

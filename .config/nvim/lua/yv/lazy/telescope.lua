@@ -26,5 +26,6 @@ return {
       builtin.grep_string({ search = word });
     end)
     vim.keymap.set('n', '<leader>fg', builtin.live_grep)
+    vim.keymap.set('n', '<leader>H', builtin.help_tags)
   end,
 }
