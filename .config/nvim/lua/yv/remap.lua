@@ -14,8 +14,6 @@ vim.keymap.set("n", "<Leader>l", "<C-w>l")
 -- Remap resizing splits
 vim.keymap.set("n", "<C-h>", ":vertical resize -3<CR>")
 vim.keymap.set("n", "<C-l>", ":vertical resize +3<CR>")
-vim.keymap.set("n", "<C-k>", ":resize -3<CR>")
-vim.keymap.set("n", "<C-j>", ":resize +3<CR>")
 vim.keymap.set("n", "<Leader>=", "<C-w>=")
 
 -- Shotcuts for buffers
@@ -70,3 +68,5 @@ vim.keymap.set("n", "<leader>d", "\"_d")
 vim.keymap.set("n", "<leader>D", "\"_D")
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+vim.keymap.set("n", "<C-u>", "<cmd>cnext<CR>zz") -- Not <C-j> because of conflict with my set allacritty bindings
+vim.keymap.set("n", "<C-i>", "<cmd>cprev<CR>zz") -- Not <C-k> because of conflict with my set allacritty bindings
