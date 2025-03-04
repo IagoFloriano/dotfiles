@@ -5,7 +5,28 @@ local augroup = vim.api.nvim_create_augroup
 local yvGroup = augroup('ThePrimeagen', {})
 
 local autocmd = vim.api.nvim_create_autocmd
+local yank_group = augroup('HighlightYank', {})
 
+-- Show visually text that was yanked
+autocmd('TextYankPost', {
+    group = yank_group,
+    pattern = '*',
+    callback = function()
+        vim.highlight.on_yank({
+            higroup = 'IncSearch',
+            timeout = 40,
+        })
+    end,
+})
+
+-- Remove trailing spaces on save
+autocmd({"BufWritePre"}, {
+    group = yvGroup,
+    pattern = "*",
+    command = [[%s/\s\+$//e]],
+})
+
+-- Keymaps for when lsp was able to attach
 autocmd('LspAttach', {
   group = yvGroup,
   callback = function(e)

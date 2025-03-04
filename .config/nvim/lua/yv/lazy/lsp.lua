@@ -91,6 +91,7 @@ return {
         ['<C-n>'] = function()
           if not cmp.visible() then
             cmp.complete()
+            cmp.select_next_item(cmp_select)
           else
             cmp.select_next_item(cmp_select)
           end
@@ -98,6 +99,7 @@ return {
         ['<C-p>'] = function()
           if not cmp.visible() then
             cmp.complete()
+            cmp.select_prev_item(cmp_select)
           else
             cmp.select_prev_item(cmp_select)
           end
