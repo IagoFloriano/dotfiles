@@ -19,6 +19,8 @@ vim.opt.hlsearch = false
 vim.opt.incsearch = true
 vim.opt.smartcase = true
 vim.opt.ic = true
+vim.opt.conceallevel = 0
+vim.g.indentLine_conceallevel = 0
 
 vim.opt.termguicolors = true
 

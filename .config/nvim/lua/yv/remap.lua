@@ -68,5 +68,5 @@ vim.keymap.set("n", "<leader>d", "\"_d")
 vim.keymap.set("n", "<leader>D", "\"_D")
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
-vim.keymap.set("n", "<C-u>", "<cmd>cnext<CR>zz") -- Not <C-j> because of conflict with my set allacritty bindings
-vim.keymap.set("n", "<C-i>", "<cmd>cprev<CR>zz") -- Not <C-k> because of conflict with my set allacritty bindings
+vim.keymap.set("n", "<A-u>", "<cmd>cnext<CR>zz") -- Not <A-j> because of harpoon
+vim.keymap.set("n", "<A-i>", "<cmd>cprev<CR>zz") -- Not <A-k> because of harpoon
