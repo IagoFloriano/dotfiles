@@ -1,8 +1,9 @@
 require("yv.set")
 require("yv.remap")
 require("yv.lazy_init")
+
 local augroup = vim.api.nvim_create_augroup
-local yvGroup = augroup('ThePrimeagen', {})
+local yvGroup = augroup('yv', {})
 
 local autocmd = vim.api.nvim_create_autocmd
 local yank_group = augroup('HighlightYank', {})
