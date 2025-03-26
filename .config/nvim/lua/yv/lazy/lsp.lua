@@ -83,6 +83,10 @@ return {
       completion = {
         autocomplete = false, -- Required for cmp to only show when pressing [select next/prev]
       },
+      window = {
+        completion = cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered(),
+      },
       mapping = cmp.mapping.preset.insert({
         ['<C-Space>'] = cmp.mapping.confirm({ select = true }),
         ['<C-s>'] = cmp.mapping.complete(),
@@ -123,6 +127,10 @@ return {
         header = "",
         prefix = "",
       },
+    })
+
+    vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+      border = "rounded",
     })
   end,
 }
