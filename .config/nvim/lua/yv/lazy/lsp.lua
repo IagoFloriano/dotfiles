@@ -74,6 +74,9 @@ return {
     })
     local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
+    require("lspconfig").gdscript.setup {
+      capabilities = capabilities,
+    }
     cmp.setup({
       snippet = {
         expand = function(args)
