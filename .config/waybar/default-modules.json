@@ -61,5 +61,10 @@
     "tray": {
         "icon-size": 18,
         "reverse-direction": true
+    },
+    "battery": {
+      "interval": 60,
+      "format": "{capacity}%|{time}",
+      "format-time": "{H}:{m}"
     }
 }
