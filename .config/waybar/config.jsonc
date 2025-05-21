@@ -20,9 +20,7 @@
     "modules-right": [
         "cpu",
         "memory",
-        "disk",
-        "disk#disk2",
-        "disk#disk3",
+        "group/disks",
         // "hyprland/language",
         "clock",
         // weather (need to find)
