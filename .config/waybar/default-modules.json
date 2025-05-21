@@ -71,7 +71,7 @@
       "orientation": "horizontal",
       "modules": ["disk", "disk#disk2", "disk#disk3"],
       "drawer": {
-        "transition-duration": 500,
+        "transition-duration": 150,
         "children-class": "not-power",
         "transition-left-to-right": true
       }
