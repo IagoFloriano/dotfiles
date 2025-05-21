@@ -23,7 +23,7 @@
         "group/disks",
         // "hyprland/language",
         "clock",
-        // weather (need to find)
+        "custom/weather",
         // "mpd", // music player daemon https://github.com/Alexays/Waybar/wiki/Module:-MPD
         "pulseaudio",
         "tray"
@@ -53,7 +53,7 @@
         "memory",
         // "hyprland/language",
         "clock",
-        // weather (need to find)
+        "custom/weather",
         // "mpd", // music player daemon https://github.com/Alexays/Waybar/wiki/Module:-MPD
         "pulseaudio"
     ],

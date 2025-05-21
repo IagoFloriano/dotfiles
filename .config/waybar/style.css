@@ -85,7 +85,7 @@ button:hover {
 #language,
 #clock,
 #battery,
-#temperature,
+#custom-weather,
 #pulseaudio,
 #tray,
 #mpd {
@@ -186,6 +186,11 @@ label:focus {
     color: #bd93f9;
 }
 
+#custom-weather {
+    border-color: #8be9fd;
+    color: #8be9fd;
+}
+
 #pulseaudio {
     border-color: #bd93f9;
     color: #bd93f9;
@@ -217,14 +222,6 @@ label:focus {
 
 #custom-media.custom-vlc {
     background-color: #ffa000;
-}
-
-#temperature {
-    background-color: #f0932b;
-}
-
-#temperature.critical {
-    background-color: #eb4d4b;
 }
 
 #tray {

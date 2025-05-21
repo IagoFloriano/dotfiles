@@ -25,11 +25,14 @@
     "hyprland/window":{
     },
     "cpu": {
-        "format": "Cpu:{usage}%",
-        "tooltip": false
+        "format": "{usage}%",
+        "tooltip": true,
+        "tooltip-format": "Cpu:{usage}%"
     },
     "memory": {
-        "format": "Ram:{used}/{total}"
+        "format": "{used}",
+        "tooltip": true,
+        "tooltip-format": "Ram:{used}/{total}",
     },
     "disk": {
         "format": "1:{used}/{total}G",
@@ -75,5 +78,9 @@
         "children-class": "not-power",
         "transition-left-to-right": true
       }
+    },
+    "custom/weather": {
+      "exec": "/home/yv/.config/waybar/weather.sh",
+      "interval": 60
     }
 }
