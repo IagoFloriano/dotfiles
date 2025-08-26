@@ -46,6 +46,7 @@ button:hover {
     padding: 0;
     margin: 0;
     font-family: FontAwesome;
+    font-size: 8;
     font-weight: bold;
 }
 

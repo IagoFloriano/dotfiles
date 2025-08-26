@@ -1,3 +1,3 @@
 #!/bin/bash
 
-curl -s 'https://wttr.in/?format=%t\n' | sed 's/+//g'
+curl -s 'https://wttr.in/cwb?format=%t\n' | sed 's/+//g'

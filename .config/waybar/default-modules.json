@@ -30,20 +30,20 @@
         "tooltip-format": "Cpu:{usage}%"
     },
     "memory": {
-        "format": "{used}",
+        "format": "{used:0.2f}",
         "tooltip": true,
         "tooltip-format": "Ram:{used}/{total}",
     },
     "disk": {
-        "format": "1:{used}/{total}G",
+        "format": "1:{used}/{total}",
         "path": "/"
     },
     "disk#disk2": {
-        "format": "2:{used}/{total}G",
+        "format": "2:{used}/{total}",
         "path": "/media/SSD"
     },
     "disk#disk3": {
-        "format": "3:{used}/{total}G",
+        "format": "3:{used}/{total}",
         "path": "/media/HD"
     },
     "hyprland/language": {
@@ -81,6 +81,7 @@
     },
     "custom/weather": {
       "exec": "/home/yv/.config/waybar/weather.sh",
-      "interval": 60
+      "interval": 60,
+      "exec-on-event": true
     }
 }
