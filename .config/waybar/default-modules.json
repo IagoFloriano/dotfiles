@@ -52,7 +52,7 @@
     },
     "clock": {
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format": "󰥔 {:%H:%M:%S %a %d}",
+        "format": "󰥔 {:L%H:%M:%S %a %d}",
         "locale": "pt_BR.UTF8",
         "interval": 1
     },
@@ -66,7 +66,7 @@
         "scroll-step": 5,
         "format": "{icon} {volume}%",
         "on-click": "pavucontrol",
-        "format-icons": ["","","",""],
+        "format-icons": ["","",""],
         "format-muted": " {volume}%"
     },
     "tray": {
