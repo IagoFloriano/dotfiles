@@ -2,7 +2,7 @@
     /* `otf-font-awesome` is required to be installed for icons */
     border: none;
     border-radius: 0;
-    font-family: Hack, FontAwesome, sans-serif;
+    font-family: Hack, 'Hack Nerd Font Propo', sans-serif;
     font-size: 12;
     font-weight: bold;
 }
@@ -84,7 +84,7 @@ button:hover {
 #memory,
 #disk,
 #language,
-#clock,
+#clocks,
 #battery,
 #custom-weather,
 #pulseaudio,
@@ -116,7 +116,7 @@ button:hover {
     margin-right: 0;
 }
 
-#clock {
+#clocks {
     border-color: #f1fa8c;
     color: #f1fa8c;
 }

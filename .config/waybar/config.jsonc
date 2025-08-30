@@ -22,7 +22,7 @@
         "memory",
         "group/disks",
         // "hyprland/language",
-        "clock",
+        "group/clocks",
         "custom/weather",
         // "mpd", // music player daemon https://github.com/Alexays/Waybar/wiki/Module:-MPD
         "pulseaudio",
@@ -52,7 +52,7 @@
         "cpu",
         "memory",
         // "hyprland/language",
-        "clock",
+        "group/clocks",
         "custom/weather",
         // "mpd", // music player daemon https://github.com/Alexays/Waybar/wiki/Module:-MPD
         "pulseaudio"
