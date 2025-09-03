@@ -3,4 +3,4 @@
 DMENU="rofi -dmenu"
 
 CHOICE=$(ls ~/.pastebin | $DMENU -c -l 15 )
-[ -n "$CHOICE" ] && xclip -selection c $HOME/.pastebin/$CHOICE
+[ -n "$CHOICE" ] && wl-copy < $HOME/.pastebin/$CHOICE
