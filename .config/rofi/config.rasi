@@ -1,0 +1,24 @@
+configuration {
+  show-icons: true;
+  display-drun: "";
+  display-run: "";
+  disable-history: true;
+  location: 0;
+  sorting-method: "fzf";
+  case-sensitive: false;
+	icon-theme: "Tela circle dracula dark";
+	drun-match-fields: "name,generic,categories,keywords";
+	drun-exclude-categories: "exec";
+	drun-display-format: "{name} [<span weight='light' size='small'><i>({keywords})</i></span>]";
+	sort: false;
+  kb-accept-entry: "Return,KP_Enter";
+  kb-mode-complete: "";
+  kb-remove-char-back: "BackSpace,Shift+BackSpace";
+  kb-remove-to-eol: "";
+  kb-row-left:  "Control+Page_Up,Control+h,Alt+h";
+  kb-row-down:  "Down,Control+n,Control+j,Alt+j";
+  kb-row-up:    "Up,Control+p,Control+k,Alt+k";
+  kb-row-right: "Control+Page_Down,Control+l,Alt+l";
+}
+
+@import "/home/yv/.config/rofi/theme/config.rasi"
