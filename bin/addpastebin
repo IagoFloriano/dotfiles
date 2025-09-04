@@ -1,0 +1,18 @@
+#!/bin/sh
+
+DMENU="rofi -dmenu"
+
+PASTEBINDIR="${HOME}/.pastebin"
+NEWFILENAME=$(${DMENU} -l 0 -p "Type new filename")
+
+[ -z ${NEWFILENAME} ] && echo "No choice made exiting" && exit
+
+FILENUMBER=$(( \
+  $(ls --format='single-column' ${PASTEBINDIR}/* | \
+  sort -n | tail -n 1 | \
+  xargs -- basename | cut -d'-' -f1) \
+  + 1))
+
+NEWFILENAME="${FILENUMBER}-${NEWFILENAME}"
+
+wl-paste > "${PASTEBINDIR}/${NEWFILENAME}"

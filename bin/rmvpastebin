@@ -1,0 +1,17 @@
+#!/bin/sh
+
+DMENU="rofi -dmenu"
+PASTEBINDIR="${HOME}/.pastebin"
+
+CHOICE=$(ls ${PASTEBINDIR} | $DMENU -c -l 15 -p "Remove a file")
+[ -n "$CHOICE" ] && rm "${PASTEBINDIR}/${CHOICE}"
+
+FILES=($(ls ${PASTEBINDIR} | sort -n))
+
+for i in $(seq 0 $(( ${#FILES[@]} - 1)) ); do
+  FILENUMBER=$(echo "${FILES[$i]}" | cut -d'-' -f1)
+  if [[ ${FILENUMBER} != $(( ${i} + 1)) ]] then
+    NEWFILENAME="$(( ${i} + 1 ))-$(echo "${FILES[$i]}" | cut -d'-' -f2-)";
+    mv ${PASTEBINDIR}/${FILES[$i]} ${PASTEBINDIR}/${NEWFILENAME}
+  fi;
+done;
