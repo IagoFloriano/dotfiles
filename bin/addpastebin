@@ -9,8 +9,9 @@ NEWFILENAME=$(${DMENU} -l 0 -p "Type new filename")
 
 FILENUMBER=$(( \
   $(ls --format='single-column' ${PASTEBINDIR}/* | \
+  xargs -- basename -a | \
   sort -n | tail -n 1 | \
-  xargs -- basename | cut -d'-' -f1) \
+  cut -d'-' -f1) \
   + 1))
 
 NEWFILENAME="${FILENUMBER}-${NEWFILENAME}"

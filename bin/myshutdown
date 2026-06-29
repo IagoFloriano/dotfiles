@@ -5,7 +5,7 @@ DMENU="rofi -dmenu"
 CHOICE=$(printf "Yes\nReboot\nNo" | $DMENU -i -l 3 -p "")
 echo $CHOICE
 
-rm -r $HOME/Pictures/shots/*
+rm -fr $HOME/Pictures/shots/*
 
 [ "$CHOICE" = "Yes" ] && shutdown now
 [ "$CHOICE" = "Reboot" ] && reboot

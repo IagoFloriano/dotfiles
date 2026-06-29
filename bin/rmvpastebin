@@ -3,7 +3,7 @@
 DMENU="rofi -dmenu"
 PASTEBINDIR="${HOME}/.pastebin"
 
-CHOICE=$(ls ${PASTEBINDIR} | $DMENU -c -l 15 -p "Remove a file")
+CHOICE=$(ls ${PASTEBINDIR} | sort -n | $DMENU -c -l 15 -p "Remove a file")
 [ -n "$CHOICE" ] && rm "${PASTEBINDIR}/${CHOICE}"
 
 FILES=($(ls ${PASTEBINDIR} | sort -n))
